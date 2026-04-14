@@ -3,13 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const sponsors = await getCollection('sponsors');
-const tierOrder = ['platinum', 'gold', 'silver', 'bronze', 'friend'];
+const tierOrder = ['elite_team', 'champion', 'game_changer', 'all_star', 'super_fan'];
 const tierLabels: Record<string, string> = {
-  platinum: 'Platinum ($1,500+)',
-  gold: 'Gold ($1,000+)',
-  silver: 'Silver ($500+)',
-  bronze: 'Bronze ($250+)',
-  friend: 'Friends of the Program',
+  elite_team: 'Elite Team ($1,500)',
+  champion: 'Champion ($1,000)',
+  game_changer: 'Game Changer ($500)',
+  all_star: 'All Star ($250)',
+  super_fan: 'Super Fan ($100)',
 };
 const grouped = tierOrder.map(tier => ({
   tier,
@@ -20,7 +20,7 @@ const grouped = tierOrder.map(tier => ({
 <Layout title="Sponsors" description="Thank you to the businesses and families supporting QV Girls Basketball.">
   <section class="bg-qvblack text-white py-16">
     <div class="container-narrow">
-      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">2025 Season</p>
+      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">2025-2026 Season</p>
       <h1 class="font-display text-4xl md:text-6xl uppercase">Our Sponsors</h1>
       <p class="text-lg text-gray-300 max-w-2xl mt-4">These are the people and businesses behind every gear bag, tournament fee, and team meal this season. Please support them.</p>
     </div>
@@ -55,7 +55,7 @@ const grouped = tierOrder.map(tier => ({
   <section class="bg-gray-50 py-16">
     <div class="container-narrow text-center">
       <h2 class="font-display text-3xl uppercase mb-4">Become a Sponsor</h2>
-      <p class="text-gray-700 max-w-xl mx-auto mb-6">Interested in joining our sponsor family for the 2026 season? We'd love to talk.</p>
+      <p class="text-gray-700 max-w-xl mx-auto mb-6">Interested in joining our sponsor family for the 2026-2027 season? We'd love to talk.</p>
       <a href="/contact" class="btn-secondary">Get in Touch</a>
     </div>
   </section>

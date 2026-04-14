@@ -5,7 +5,7 @@ const sponsors = defineCollection({
   schema: z.object({
     name: z.string(),
     contact: z.string().optional(),
-    tier: z.enum(['platinum', 'gold', 'silver', 'bronze', 'friend']),
+    tier: z.enum(['elite_team', 'champion', 'game_changer', 'all_star', 'super_fan']),
     amount: z.number().optional(),
     website: z.string().url().optional(),
     logo: z.string().optional(),

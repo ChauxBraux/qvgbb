@@ -3,7 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const sponsors = await getCollection('sponsors');
-const tierOrder = { platinum: 0, gold: 1, silver: 2, bronze: 3, friend: 4 };
+const tierOrder = { elite_team: 0, champion: 1, game_changer: 2, all_star: 3, super_fan: 4 };
+const tierLabels: Record<string, string> = { elite_team: 'Elite Team', champion: 'Champion', game_changer: 'Game Changer', all_star: 'All Star', super_fan: 'Super Fan' };
 const topSponsors = sponsors
   .sort((a, b) => tierOrder[a.data.tier] - tierOrder[b.data.tier])
   .slice(0, 6);
@@ -67,7 +68,7 @@ const news = (await getCollection('news', ({ data }) => !data.draft))
           <div class="border-2 border-qvblack p-6 hover:border-qvgold transition-colors">
             <p class="font-display font-semibold text-lg">{s.data.name}</p>
             {s.data.contact && <p class="text-sm text-gray-600 mt-1">{s.data.contact}</p>}
-            <p class="text-xs uppercase tracking-wider text-qvgold-700 mt-3 font-display">{s.data.tier} Sponsor</p>
+            <p class="text-xs uppercase tracking-wider text-qvgold-700 mt-3 font-display">{tierLabels[s.data.tier]} Sponsor</p>
           </div>
         ))}
       </div>

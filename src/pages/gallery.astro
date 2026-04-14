@@ -4,9 +4,8 @@ import Layout from '../layouts/Layout.astro';
 // To populate this gallery, drop images into /public/images/gallery/
 // and reference them here. We'll wire it up to glob the folder later.
 const photos = [
-  { src: '/images/gallery/placeholder-1.jpg', alt: 'Team huddle', caption: 'Pre-game huddle, Dec 2025' },
-  { src: '/images/gallery/placeholder-2.jpg', alt: 'Senior night', caption: 'Senior Night 2025' },
-  { src: '/images/gallery/placeholder-3.jpg', alt: 'Tournament', caption: 'Holiday Tournament' },
+  { src: '/images/gallery/team-photo.jpg', alt: 'QV Girls Basketball official team photo in the Quaker Valley gym', caption: 'Official Team Photo, 2025-2026 Season' },
+  { src: '/images/gallery/florida-trip.jpg', alt: 'QV Girls Basketball team at Universal Studios during their Florida trip', caption: 'Florida Trip, 2025' },
 ];
 ---
 <Layout title="Gallery" description="Photos from the QV Girls Basketball season.">
@@ -34,7 +33,6 @@ const photos = [
           </figure>
         ))}
       </div>
-      <p class="text-center text-sm text-gray-500 mt-8">Add real photos to <code class="bg-gray-100 px-2 py-1 rounded">/public/images/gallery/</code> and update the photos array in <code class="bg-gray-100 px-2 py-1 rounded">src/pages/gallery.astro</code>.</p>
     </div>
   </section>
 </Layout>

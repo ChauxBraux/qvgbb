@@ -58,7 +58,7 @@ public/
    ---
    name: "Acme Corp"
    contact: "Jane Doe"
-   tier: "gold"        # platinum | gold | silver | bronze | friend
+   tier: "champion"    # elite_team | champion | game_changer | all_star | super_fan
    amount: 1000
    year: 2026
    ---
