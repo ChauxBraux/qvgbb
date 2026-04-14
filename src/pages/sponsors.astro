@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const sponsors = await getCollection('sponsors');
+const tierOrder = ['platinum', 'gold', 'silver', 'bronze', 'friend'];
+const tierLabels: Record<string, string> = {
+  platinum: 'Platinum ($1,500+)',
+  gold: 'Gold ($1,000+)',
+  silver: 'Silver ($500+)',
+  bronze: 'Bronze ($250+)',
+  friend: 'Friends of the Program',
+};
+const grouped = tierOrder.map(tier => ({
+  tier,
+  label: tierLabels[tier],
+  items: sponsors.filter(s => s.data.tier === tier).sort((a, b) => (b.data.amount ?? 0) - (a.data.amount ?? 0)),
+})).filter(g => g.items.length > 0);
+---
+<Layout title="Sponsors" description="Thank you to the businesses and families supporting QV Girls Basketball.">
+  <section class="bg-qvblack text-white py-16">
+    <div class="container-narrow">
+      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">2025 Season</p>
+      <h1 class="font-display text-4xl md:text-6xl uppercase">Our Sponsors</h1>
+      <p class="text-lg text-gray-300 max-w-2xl mt-4">These are the people and businesses behind every gear bag, tournament fee, and team meal this season. Please support them.</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container-narrow space-y-12">
+      {grouped.map(group => (
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="h-px flex-1 bg-qvgold"></div>
+            <h2 class="font-display uppercase tracking-wider text-lg text-qvblack whitespace-nowrap">{group.label}</h2>
+            <div class="h-px flex-1 bg-qvgold"></div>
+          </div>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {group.items.map(s => (
+              <div class="border-2 border-qvblack p-6 hover:border-qvgold transition-colors">
+                {s.data.website ? (
+                  <a href={s.data.website} target="_blank" rel="noopener" class="font-display font-semibold text-lg hover:text-qvgold-700">{s.data.name}</a>
+                ) : (
+                  <p class="font-display font-semibold text-lg">{s.data.name}</p>
+                )}
+                {s.data.contact && <p class="text-sm text-gray-600 mt-1">{s.data.contact}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16">
+    <div class="container-narrow text-center">
+      <h2 class="font-display text-3xl uppercase mb-4">Become a Sponsor</h2>
+      <p class="text-gray-700 max-w-xl mx-auto mb-6">Interested in joining our sponsor family for the 2026 season? We'd love to talk.</p>
+      <a href="/contact" class="btn-secondary">Get in Touch</a>
+    </div>
+  </section>
+</Layout>

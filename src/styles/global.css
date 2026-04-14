@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-qvblack bg-white antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-qvgold text-qvblack font-display font-semibold uppercase tracking-wider rounded-md hover:bg-qvgold-600 transition-colors;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-qvblack text-qvblack font-display font-semibold uppercase tracking-wider rounded-md hover:bg-qvblack hover:text-qvgold transition-colors;
+  }
+  .container-narrow {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}

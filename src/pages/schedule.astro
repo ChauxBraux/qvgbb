@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import schedule from '../data/schedule.json';
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+type Game = {
+  date: string;
+  opponent: string;
+  location: string;
+  time: string;
+  homeAway: 'home' | 'away';
+  result?: string;
+};
+
+const games = (schedule as Game[]).sort((a, b) => new Date(a.date).valueOf() - new Date(b.date).valueOf());
+const upcoming = games.filter(g => new Date(g.date) >= today);
+const past = games.filter(g => new Date(g.date) < today).reverse();
+---
+<Layout title="Schedule" description="Game schedule and results for QV Girls Basketball.">
+  <section class="bg-qvblack text-white py-16">
+    <div class="container-narrow">
+      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">2025-2026 Season</p>
+      <h1 class="font-display text-4xl md:text-6xl uppercase">Schedule</h1>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container-narrow">
+      <h2 class="font-display text-2xl uppercase mb-6 border-l-4 border-qvgold pl-3">Upcoming Games</h2>
+      {upcoming.length === 0 ? (
+        <p class="text-gray-600">No upcoming games scheduled. Check back soon.</p>
+      ) : (
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-t border-gray-200">
+            <thead class="text-xs uppercase tracking-wider text-gray-500 font-display">
+              <tr>
+                <th class="py-3">Date</th>
+                <th class="py-3">Opponent</th>
+                <th class="py-3">Location</th>
+                <th class="py-3">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {upcoming.map(g => (
+                <tr class="border-t border-gray-100 hover:bg-gray-50">
+                  <td class="py-4 font-medium">{new Date(g.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
+                  <td class="py-4">
+                    <span class="text-xs uppercase font-display text-qvgold-700 mr-2">{g.homeAway === 'home' ? 'vs' : '@'}</span>
+                    {g.opponent}
+                  </td>
+                  <td class="py-4 text-gray-600">{g.location}</td>
+                  <td class="py-4">{g.time}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  </section>
+
+  {past.length > 0 && (
+    <section class="py-12 bg-gray-50">
+      <div class="container-narrow">
+        <h2 class="font-display text-2xl uppercase mb-6 border-l-4 border-qvgold pl-3">Results</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead class="text-xs uppercase tracking-wider text-gray-500 font-display">
+              <tr>
+                <th class="py-3">Date</th>
+                <th class="py-3">Opponent</th>
+                <th class="py-3">Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              {past.map(g => (
+                <tr class="border-t border-gray-200">
+                  <td class="py-3">{new Date(g.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
+                  <td class="py-3">{g.homeAway === 'home' ? 'vs' : '@'} {g.opponent}</td>
+                  <td class="py-3 font-medium">{g.result ?? '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

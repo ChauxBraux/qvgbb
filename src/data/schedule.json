@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2025-12-05",
+    "opponent": "Sewickley Academy",
+    "location": "QV High School",
+    "time": "7:00 PM",
+    "homeAway": "home",
+    "result": "W 52-41"
+  },
+  {
+    "date": "2025-12-12",
+    "opponent": "Avonworth",
+    "location": "Avonworth High School",
+    "time": "7:00 PM",
+    "homeAway": "away",
+    "result": "L 38-44"
+  },
+  {
+    "date": "2026-01-15",
+    "opponent": "Beaver",
+    "location": "QV High School",
+    "time": "7:30 PM",
+    "homeAway": "home"
+  },
+  {
+    "date": "2026-01-22",
+    "opponent": "Hopewell",
+    "location": "Hopewell High School",
+    "time": "7:00 PM",
+    "homeAway": "away"
+  }
+]

@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contact" description="Get in touch with QV Girls Basketball Boosters.">
+  <section class="bg-qvblack text-white py-16">
+    <div class="container-narrow">
+      <h1 class="font-display text-4xl md:text-6xl uppercase">Contact</h1>
+      <p class="text-lg text-gray-300 max-w-2xl mt-4">Questions about sponsorship, donations, or the program? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container-narrow grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-2xl uppercase mb-4">Get in Touch</h2>
+        <div class="space-y-4 text-gray-700">
+          <div>
+            <p class="font-display uppercase text-xs tracking-wider text-gray-500">President</p>
+            <p>Rachael Watson</p>
+          </div>
+          <div>
+            <p class="font-display uppercase text-xs tracking-wider text-gray-500">Email</p>
+            <p><a href="mailto:boosters@qvgirlsbasketball.org" class="hover:text-qvgold-700 underline">boosters@qvgirlsbasketball.org</a></p>
+          </div>
+          <div>
+            <p class="font-display uppercase text-xs tracking-wider text-gray-500">Mailing</p>
+            <p>QV Girls Basketball Boosters<br/>Sewickley, PA 15143</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl uppercase mb-4">Send a Message</h2>
+        <!-- Formspree: replace YOUR_FORM_ID with your actual ID after creating a form at formspree.io -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-display mb-1" for="name">Name</label>
+            <input id="name" name="name" type="text" required class="w-full border-2 border-qvblack p-3 focus:border-qvgold focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-display mb-1" for="email">Email</label>
+            <input id="email" name="email" type="email" required class="w-full border-2 border-qvblack p-3 focus:border-qvgold focus:outline-none"/>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-display mb-1" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required class="w-full border-2 border-qvblack p-3 focus:border-qvgold focus:outline-none"></textarea>
+          </div>
+          <button type="submit" class="btn-primary w-full">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

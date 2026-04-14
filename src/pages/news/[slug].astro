@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news', ({ data }) => !data.draft);
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+<Layout title={post.data.title} description={post.data.excerpt} image={post.data.image}>
+  <article class="py-16">
+    <div class="container-narrow max-w-3xl">
+      <a href="/news" class="text-sm font-display uppercase tracking-wider text-gray-500 hover:text-qvgold-700">&larr; Back to News</a>
+      <p class="text-xs uppercase tracking-wider text-gray-500 font-display mt-6">
+        {new Date(post.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        <span class="mx-2">&middot;</span>
+        <span>{post.data.author}</span>
+      </p>
+      <h1 class="font-display text-4xl md:text-5xl mt-3 mb-6">{post.data.title}</h1>
+      {post.data.image && (
+        <img src={post.data.image} alt={post.data.title} class="w-full mb-8 border-2 border-qvblack"/>
+      )}
+      <div class="prose prose-lg max-w-none prose-headings:font-display prose-headings:uppercase prose-a:text-qvgold-700">
+        <Content />
+      </div>
+    </div>
+  </article>
+</Layout>

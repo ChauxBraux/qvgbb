@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const sponsors = await getCollection('sponsors');
+const tierOrder = { platinum: 0, gold: 1, silver: 2, bronze: 3, friend: 4 };
+const topSponsors = sponsors
+  .sort((a, b) => tierOrder[a.data.tier] - tierOrder[b.data.tier])
+  .slice(0, 6);
+
+const news = (await getCollection('news', ({ data }) => !data.draft))
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
+  .slice(0, 3);
+---
+<Layout>
+  <!-- Hero -->
+  <section class="bg-qvblack text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute -top-20 -right-20 w-96 h-96 bg-qvgold rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-qvgold rounded-full blur-3xl"></div>
+    </div>
+    <div class="container-narrow relative py-20 md:py-28">
+      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-4">Quaker Valley</p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold uppercase leading-none mb-6">
+        Girls Basketball<br/><span class="text-qvgold">Boosters</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-8">
+        We support Quaker Valley girls basketball through sponsorships, fundraising, and the people who show up for these girls season after season.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/donate" class="btn-primary">Support the Team</a>
+        <a href="/sponsors" class="btn-secondary !border-qvgold !text-qvgold hover:!bg-qvgold hover:!text-qvblack">Our Sponsors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission strip -->
+  <section class="bg-qvgold py-12">
+    <div class="container-narrow grid md:grid-cols-3 gap-8 text-qvblack">
+      <div>
+        <p class="font-display text-3xl font-bold">9</p>
+        <p class="font-display uppercase tracking-wider text-sm">2025 Sponsors</p>
+      </div>
+      <div>
+        <p class="font-display text-3xl font-bold">$5,950</p>
+        <p class="font-display uppercase tracking-wider text-sm">Raised in 2025</p>
+      </div>
+      <div>
+        <p class="font-display text-3xl font-bold">100%</p>
+        <p class="font-display uppercase tracking-wider text-sm">Direct to the Program</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured sponsors -->
+  <section class="py-16">
+    <div class="container-narrow">
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <h2 class="font-display text-3xl md:text-4xl uppercase">Featured Sponsors</h2>
+          <p class="text-gray-600 mt-2">Local businesses who make this season possible.</p>
+        </div>
+        <a href="/sponsors" class="text-qvblack hover:text-qvgold-700 font-display uppercase text-sm tracking-wider hidden md:inline">View all &rarr;</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {topSponsors.map(s => (
+          <div class="border-2 border-qvblack p-6 hover:border-qvgold transition-colors">
+            <p class="font-display font-semibold text-lg">{s.data.name}</p>
+            {s.data.contact && <p class="text-sm text-gray-600 mt-1">{s.data.contact}</p>}
+            <p class="text-xs uppercase tracking-wider text-qvgold-700 mt-3 font-display">{s.data.tier} Sponsor</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent news -->
+  {news.length > 0 && (
+    <section class="py-16 bg-gray-50">
+      <div class="container-narrow">
+        <h2 class="font-display text-3xl md:text-4xl uppercase mb-8">Latest News</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {news.map(post => (
+            <a href={`/news/${post.slug}`} class="block bg-white border border-gray-200 hover:border-qvgold transition-colors p-6">
+              <p class="text-xs uppercase tracking-wider text-gray-500 font-display">{new Date(post.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+              <h3 class="font-display text-xl font-semibold mt-2 mb-3">{post.data.title}</h3>
+              <p class="text-sm text-gray-700">{post.data.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="bg-qvblack text-white py-16">
+    <div class="container-narrow text-center">
+      <h2 class="font-display text-3xl md:text-4xl uppercase mb-4">Become a Sponsor</h2>
+      <p class="text-gray-300 max-w-2xl mx-auto mb-8">Whether you're a local business or a family who wants to give back, your support shapes what kind of season these girls get.</p>
+      <a href="/donate" class="btn-primary">Get Involved</a>
+    </div>
+  </section>
+</Layout>

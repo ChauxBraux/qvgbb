@@ -1,0 +1,49 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/sponsors', label: 'Sponsors' },
+  { href: '/schedule', label: 'Schedule' },
+  { href: '/news', label: 'News' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/contact', label: 'Contact' },
+];
+const path = Astro.url.pathname;
+---
+<header class="bg-qvblack text-white sticky top-0 z-50 shadow-md">
+  <div class="container-narrow flex items-center justify-between py-4">
+    <a href="/" class="font-display text-xl font-bold uppercase tracking-wide">
+      <span class="text-qvgold">QV</span> Girls Basketball
+    </a>
+    <nav class="hidden md:flex items-center gap-6">
+      {links.map(l => (
+        <a
+          href={l.href}
+          class={`text-sm font-display uppercase tracking-wider hover:text-qvgold transition-colors ${
+            path === l.href || (l.href !== '/' && path.startsWith(l.href)) ? 'text-qvgold' : 'text-white'
+          }`}
+        >{l.label}</a>
+      ))}
+      <a href="/donate" class="btn-primary !py-2 !px-4 text-sm">Donate</a>
+    </nav>
+    <button id="mobile-toggle" class="md:hidden text-qvgold" aria-label="Menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-qvblack-800 border-t border-qvgold/20">
+    <div class="container-narrow py-4 flex flex-col gap-3">
+      {links.map(l => (
+        <a href={l.href} class="text-white hover:text-qvgold font-display uppercase tracking-wider text-sm">{l.label}</a>
+      ))}
+      <a href="/donate" class="btn-primary !py-2 text-sm w-fit">Donate</a>
+    </div>
+  </div>
+</header>
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>
