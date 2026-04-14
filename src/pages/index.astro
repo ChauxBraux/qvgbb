@@ -81,10 +81,17 @@ const news = (await getCollection('news', ({ data }) => !data.draft))
         <h2 class="font-display text-3xl md:text-4xl uppercase mb-8">Latest News</h2>
         <div class="grid md:grid-cols-3 gap-6">
           {news.map(post => (
-            <a href={`/news/${post.slug}`} class="block bg-white border border-gray-200 hover:border-qvgold transition-colors p-6">
-              <p class="text-xs uppercase tracking-wider text-gray-500 font-display">{new Date(post.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
-              <h3 class="font-display text-xl font-semibold mt-2 mb-3">{post.data.title}</h3>
-              <p class="text-sm text-gray-700">{post.data.excerpt}</p>
+            <a href={`/news/${post.slug}`} class="block bg-white border border-gray-200 hover:border-qvgold transition-colors overflow-hidden">
+              {post.data.image && (
+                <div class="aspect-video bg-gray-100">
+                  <img src={post.data.image} alt="" class="w-full h-full object-cover object-top" />
+                </div>
+              )}
+              <div class="p-6">
+                <p class="text-xs uppercase tracking-wider text-gray-500 font-display">{new Date(post.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                <h3 class="font-display text-xl font-semibold mt-2 mb-3">{post.data.title}</h3>
+                <p class="text-sm text-gray-700">{post.data.excerpt}</p>
+              </div>
             </a>
           ))}
         </div>

@@ -28,6 +28,32 @@ const fullTitle = title === 'QV Girls Basketball Boosters' ? title : `${title} |
     <meta property="og:image" content={image} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SportsOrganization",
+      "name": "QV Girls Basketball Boosters",
+      "description": "A 501(c)(3) nonprofit supporting Quaker Valley girls basketball through sponsorships, fundraising, and community engagement.",
+      "url": "https://www.qvgirlsbasketball.org",
+      "logo": "https://www.qvgirlsbasketball.org/favicon.svg",
+      "sport": "Basketball",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sewickley",
+        "addressRegion": "PA",
+        "postalCode": "15143",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.instagram.com/qvgirlsbasketballboosters/",
+        "https://fan.hudl.com/usa/pa/leetsdale/organization/20945/quaker-valley-high-school/team/135913/girls-varsity-basketball"
+      ],
+      "nonprofitStatus": "Nonprofit501c3",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "qvgirlsbasketballboosters@gmail.com",
+        "contactType": "General Inquiry"
+      }
+    })} />
   </head>
   <body>
     <Nav />

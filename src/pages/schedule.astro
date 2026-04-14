@@ -18,12 +18,24 @@ type Game = {
 const games = (schedule as Game[]).sort((a, b) => new Date(a.date).valueOf() - new Date(b.date).valueOf());
 const upcoming = games.filter(g => new Date(g.date) >= today);
 const past = games.filter(g => new Date(g.date) < today).reverse();
+const wins = games.filter(g => g.result?.startsWith('W')).length;
+const losses = games.filter(g => g.result?.startsWith('L')).length;
 ---
 <Layout title="Schedule" description="Game schedule and results for QV Girls Basketball.">
   <section class="bg-qvblack text-white py-16">
     <div class="container-narrow">
       <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">2025-2026 Season</p>
       <h1 class="font-display text-4xl md:text-6xl uppercase">Schedule</h1>
+    </div>
+  </section>
+
+  <section class="bg-qvgold py-4">
+    <div class="container-narrow flex flex-wrap justify-center gap-6 text-qvblack font-display uppercase tracking-wider text-sm font-semibold">
+      <span>19-8 Overall</span>
+      <span class="hidden sm:inline">|</span>
+      <span>12-2 Section 1-3A</span>
+      <span class="hidden sm:inline">|</span>
+      <span>PIAA First Round</span>
     </div>
   </section>
 
@@ -76,16 +88,20 @@ const past = games.filter(g => new Date(g.date) < today).reverse();
               </tr>
             </thead>
             <tbody>
-              {past.map(g => (
-                <tr class="border-t border-gray-200">
-                  <td class="py-3">{new Date(g.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
-                  <td class="py-3">
-                    {g.homeAway === 'home' ? 'vs' : '@'} {g.opponent}
-                    {g.note && <span class="text-xs text-qvgold-700 ml-2">({g.note})</span>}
-                  </td>
-                  <td class="py-3 font-medium">{g.result ?? '—'}</td>
-                </tr>
-              ))}
+              {past.map(g => {
+                const isWin = g.result?.startsWith('W');
+                const isLoss = g.result?.startsWith('L');
+                return (
+                  <tr class="border-t border-gray-200">
+                    <td class="py-3">{new Date(g.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
+                    <td class="py-3">
+                      {g.homeAway === 'home' ? 'vs' : '@'} {g.opponent}
+                      {g.note && <span class="text-xs text-qvgold-700 ml-2">({g.note})</span>}
+                    </td>
+                    <td class={`py-3 font-medium ${isWin ? 'text-qvgold-700' : isLoss ? 'text-gray-400' : ''}`}>{g.result ?? '—'}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
