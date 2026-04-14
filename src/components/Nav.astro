@@ -14,7 +14,7 @@ const path = Astro.url.pathname;
     <a href="/" class="font-display text-xl font-bold uppercase tracking-wide">
       <span class="text-qvgold">QV</span> Girls Basketball
     </a>
-    <nav class="hidden md:flex items-center gap-6">
+    <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
       {links.map(l => (
         <a
           href={l.href}
@@ -25,25 +25,29 @@ const path = Astro.url.pathname;
       ))}
       <a href="/donate" class="btn-primary !py-2 !px-4 text-sm">Donate</a>
     </nav>
-    <button id="mobile-toggle" class="md:hidden text-qvgold" aria-label="Menu">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <button id="mobile-toggle" class="md:hidden text-qvgold" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <line x1="3" y1="6" x2="21" y2="6"/>
         <line x1="3" y1="12" x2="21" y2="12"/>
         <line x1="3" y1="18" x2="21" y2="18"/>
       </svg>
     </button>
   </div>
-  <div id="mobile-menu" class="hidden md:hidden bg-qvblack-800 border-t border-qvgold/20">
+  <nav id="mobile-menu" class="hidden md:hidden bg-qvblack-800 border-t border-qvgold/20" aria-label="Mobile navigation">
     <div class="container-narrow py-4 flex flex-col gap-3">
       {links.map(l => (
         <a href={l.href} class="text-white hover:text-qvgold font-display uppercase tracking-wider text-sm">{l.label}</a>
       ))}
       <a href="/donate" class="btn-primary !py-2 text-sm w-fit">Donate</a>
     </div>
-  </div>
+  </nav>
 </header>
 <script>
   const toggle = document.getElementById('mobile-toggle');
   const menu = document.getElementById('mobile-menu');
-  toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+  toggle?.addEventListener('click', () => {
+    const isHidden = menu?.classList.toggle('hidden');
+    toggle?.setAttribute('aria-expanded', String(!isHidden));
+    toggle?.setAttribute('aria-label', isHidden ? 'Open menu' : 'Close menu');
+  });
 </script>

@@ -37,10 +37,10 @@ const past = games.filter(g => new Date(g.date) < today).reverse();
           <table class="w-full text-left border-t border-gray-200">
             <thead class="text-xs uppercase tracking-wider text-gray-500 font-display">
               <tr>
-                <th class="py-3">Date</th>
-                <th class="py-3">Opponent</th>
-                <th class="py-3">Location</th>
-                <th class="py-3">Time</th>
+                <th scope="col" class="py-3">Date</th>
+                <th scope="col" class="py-3">Opponent</th>
+                <th scope="col" class="py-3">Location</th>
+                <th scope="col" class="py-3">Time</th>
               </tr>
             </thead>
             <tbody>
@@ -70,9 +70,9 @@ const past = games.filter(g => new Date(g.date) < today).reverse();
           <table class="w-full text-left">
             <thead class="text-xs uppercase tracking-wider text-gray-500 font-display">
               <tr>
-                <th class="py-3">Date</th>
-                <th class="py-3">Opponent</th>
-                <th class="py-3">Result</th>
+                <th scope="col" class="py-3">Date</th>
+                <th scope="col" class="py-3">Opponent</th>
+                <th scope="col" class="py-3">Result</th>
               </tr>
             </thead>
             <tbody>

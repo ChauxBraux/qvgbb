@@ -16,9 +16,8 @@ const news = (await getCollection('news', ({ data }) => !data.draft))
 <Layout>
   <!-- Hero -->
   <section class="bg-qvblack text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute -top-20 -right-20 w-96 h-96 bg-qvgold rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-qvgold rounded-full blur-3xl"></div>
+    <div class="absolute inset-0">
+      <img src="/images/hero-team.jpg" alt="" class="w-full h-full object-cover opacity-30" />
     </div>
     <div class="container-narrow relative py-20 md:py-28">
       <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-4">Quaker Valley</p>
