@@ -1,32 +1,182 @@
 [
   {
-    "date": "2025-12-05",
-    "opponent": "Sewickley Academy",
+    "date": "2025-11-29",
+    "opponent": "Montour",
+    "location": "Montour High School",
+    "time": "7:30 PM",
+    "homeAway": "away",
+    "result": "L 60-62"
+  },
+  {
+    "date": "2025-12-11",
+    "opponent": "Beaver Falls",
+    "location": "Beaver Falls High School",
+    "time": "7:30 PM",
+    "homeAway": "away",
+    "result": "L 48-52"
+  },
+  {
+    "date": "2025-12-13",
+    "opponent": "Chartiers Valley",
+    "location": "QV High School",
+    "time": "4:00 PM",
+    "homeAway": "home",
+    "result": "W 47-34"
+  },
+  {
+    "date": "2025-12-15",
+    "opponent": "Sto-Rox",
+    "location": "QV High School",
+    "time": "7:30 PM",
+    "homeAway": "home",
+    "result": "W 65-18"
+  },
+  {
+    "date": "2025-12-18",
+    "opponent": "Our Lady of the Sacred Heart",
+    "location": "QV High School",
+    "time": "7:30 PM",
+    "homeAway": "home",
+    "result": "W 49-30"
+  },
+  {
+    "date": "2025-12-22",
+    "opponent": "Riverside",
+    "location": "Riverside High School",
+    "time": "7:30 PM",
+    "homeAway": "away",
+    "result": "W 46-18"
+  },
+  {
+    "date": "2026-01-05",
+    "opponent": "New Brighton",
+    "location": "QV High School",
+    "time": "7:30 PM",
+    "homeAway": "home",
+    "result": "W 71-4"
+  },
+  {
+    "date": "2026-01-08",
+    "opponent": "Mohawk Area",
+    "location": "Mohawk High School",
+    "time": "7:00 PM",
+    "homeAway": "away",
+    "result": "W 36-20"
+  },
+  {
+    "date": "2026-01-12",
+    "opponent": "Ellwood City",
     "location": "QV High School",
     "time": "7:00 PM",
     "homeAway": "home",
-    "result": "W 52-41"
-  },
-  {
-    "date": "2025-12-12",
-    "opponent": "Avonworth",
-    "location": "Avonworth High School",
-    "time": "7:00 PM",
-    "homeAway": "away",
-    "result": "L 38-44"
+    "result": "W 54-30"
   },
   {
     "date": "2026-01-15",
-    "opponent": "Beaver",
+    "opponent": "Beaver Falls",
     "location": "QV High School",
     "time": "7:30 PM",
-    "homeAway": "home"
+    "homeAway": "home",
+    "result": "L 48-51"
+  },
+  {
+    "date": "2026-01-16",
+    "opponent": "Winchester Thurston",
+    "location": "QV High School",
+    "time": "7:30 PM",
+    "homeAway": "home",
+    "result": "W 53-41"
+  },
+  {
+    "date": "2026-01-19",
+    "opponent": "Sto-Rox",
+    "location": "Sto-Rox High School",
+    "time": "7:30 PM",
+    "homeAway": "away",
+    "result": "W 57-24"
   },
   {
     "date": "2026-01-22",
-    "opponent": "Hopewell",
-    "location": "Hopewell High School",
+    "opponent": "Our Lady of the Sacred Heart",
+    "location": "OLSH",
+    "time": "7:30 PM",
+    "homeAway": "away",
+    "result": "W 37-36"
+  },
+  {
+    "date": "2026-01-29",
+    "opponent": "New Brighton",
+    "location": "New Brighton High School",
     "time": "7:00 PM",
-    "homeAway": "away"
+    "homeAway": "away",
+    "result": "W 58-8"
+  },
+  {
+    "date": "2026-02-02",
+    "opponent": "Mohawk Area",
+    "location": "QV High School",
+    "time": "7:30 PM",
+    "homeAway": "home",
+    "result": "W 58-18"
+  },
+  {
+    "date": "2026-02-04",
+    "opponent": "Riverside",
+    "location": "QV High School",
+    "time": "7:30 PM",
+    "homeAway": "home",
+    "result": "W 61-30"
+  },
+  {
+    "date": "2026-02-05",
+    "opponent": "Ellwood City",
+    "location": "Ellwood City High School",
+    "time": "7:00 PM",
+    "homeAway": "away",
+    "result": "W 58-25"
+  },
+  {
+    "date": "2026-02-09",
+    "opponent": "Rochester",
+    "location": "Rochester High School",
+    "time": "7:00 PM",
+    "homeAway": "away",
+    "result": "W 53-31"
+  },
+  {
+    "date": "2026-02-13",
+    "opponent": "Keystone Oaks",
+    "location": "QV High School",
+    "time": "7:00 PM",
+    "homeAway": "home",
+    "result": "W 50-36",
+    "note": "WPIAL First Round"
+  },
+  {
+    "date": "2026-02-20",
+    "opponent": "Avonworth",
+    "location": "QV High School",
+    "time": "7:00 PM",
+    "homeAway": "home",
+    "result": "W 54-35",
+    "note": "WPIAL Consolation"
+  },
+  {
+    "date": "2026-02-23",
+    "opponent": "Our Lady of the Sacred Heart",
+    "location": "QV High School",
+    "time": "7:00 PM",
+    "homeAway": "home",
+    "result": "W 41-25",
+    "note": "WPIAL Consolation"
+  },
+  {
+    "date": "2026-03-06",
+    "opponent": "Northwestern",
+    "location": "Northwestern High School",
+    "time": "7:00 PM",
+    "homeAway": "away",
+    "result": "L 22-35",
+    "note": "PIAA First Round"
   }
 ]

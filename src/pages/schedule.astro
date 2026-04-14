@@ -12,6 +12,7 @@ type Game = {
   time: string;
   homeAway: 'home' | 'away';
   result?: string;
+  note?: string;
 };
 
 const games = (schedule as Game[]).sort((a, b) => new Date(a.date).valueOf() - new Date(b.date).valueOf());
@@ -78,7 +79,10 @@ const past = games.filter(g => new Date(g.date) < today).reverse();
               {past.map(g => (
                 <tr class="border-t border-gray-200">
                   <td class="py-3">{new Date(g.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
-                  <td class="py-3">{g.homeAway === 'home' ? 'vs' : '@'} {g.opponent}</td>
+                  <td class="py-3">
+                    {g.homeAway === 'home' ? 'vs' : '@'} {g.opponent}
+                    {g.note && <span class="text-xs text-qvgold-700 ml-2">({g.note})</span>}
+                  </td>
                   <td class="py-3 font-medium">{g.result ?? '—'}</td>
                 </tr>
               ))}
