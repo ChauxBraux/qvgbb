@@ -1,21 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-
-const sponsors = await getCollection('sponsors');
-const tierOrder = ['elite_team', 'champion', 'game_changer', 'all_star', 'super_fan'];
-const tierLabels: Record<string, string> = {
-  elite_team: 'Elite Team ($1,500)',
-  champion: 'Champion ($1,000)',
-  game_changer: 'Game Changer ($500)',
-  all_star: 'All Star ($250)',
-  super_fan: 'Super Fan ($100)',
-};
-const grouped = tierOrder.map(tier => ({
-  tier,
-  label: tierLabels[tier],
-  items: sponsors.filter(s => s.data.tier === tier).sort((a, b) => (b.data.amount ?? 0) - (a.data.amount ?? 0)),
-})).filter(g => g.items.length > 0);
+import SponsorList from '../components/SponsorList.astro';
 ---
 <Layout title="Sponsors" description="Thank you to the businesses and families supporting QV Girls Basketball.">
   <section class="bg-qvblack text-white py-16">
@@ -27,28 +12,8 @@ const grouped = tierOrder.map(tier => ({
   </section>
 
   <section class="py-16">
-    <div class="container-narrow space-y-12">
-      {grouped.map(group => (
-        <div>
-          <div class="flex items-center gap-4 mb-6">
-            <div class="h-px flex-1 bg-qvgold"></div>
-            <h2 class="font-display uppercase tracking-wider text-lg text-qvblack whitespace-nowrap">{group.label}</h2>
-            <div class="h-px flex-1 bg-qvgold"></div>
-          </div>
-          <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {group.items.map(s => (
-              <div class="border-2 border-qvblack p-6 hover:border-qvgold transition-colors">
-                {s.data.website ? (
-                  <a href={s.data.website} target="_blank" rel="noopener" class="font-display font-semibold text-lg hover:text-qvgold-700">{s.data.name}</a>
-                ) : (
-                  <p class="font-display font-semibold text-lg">{s.data.name}</p>
-                )}
-                {s.data.contact && <p class="text-sm text-gray-600 mt-1">{s.data.contact}</p>}
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
+    <div class="container-narrow">
+      <SponsorList />
     </div>
   </section>
 

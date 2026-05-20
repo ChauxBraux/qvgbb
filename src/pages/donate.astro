@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SponsorList from '../components/SponsorList.astro';
 ---
 <Layout title="Donate" description="Support QV Girls Basketball through Venmo or by becoming a corporate sponsor.">
   <section class="bg-qvblack text-white py-16">
@@ -78,6 +79,17 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <a href="/contact" class="btn-secondary mt-6">Talk to Us About Sponsorship</a>
       </div>
+    </div>
+  </section>
+
+  <section id="sponsors" class="bg-gray-50 py-16">
+    <div class="container-narrow">
+      <div class="text-center mb-12">
+        <p class="text-qvgold-700 font-display uppercase tracking-[0.3em] text-sm mb-3">2025-2026 Season</p>
+        <h2 class="font-display text-3xl md:text-4xl uppercase">Thank You to Our Sponsors</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto mt-4">The businesses and families behind every gear bag, tournament fee, and team meal this season.</p>
+      </div>
+      <SponsorList />
     </div>
   </section>
 </Layout>
