@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { raffle, isRaffleLive } from '../lib/raffle';
+const raffleLive = isRaffleLive();
 
 const sponsors = await getCollection('sponsors');
 const tierOrder = { elite_team: 0, champion: 1, game_changer: 2, all_star: 3, super_fan: 4 };
@@ -33,6 +35,21 @@ const news = (await getCollection('news', ({ data }) => !data.draft))
       </div>
     </div>
   </section>
+
+  <!-- Active raffle callout -->
+  {raffleLive && (
+    <section class="bg-qvgold py-10">
+      <div class="container-narrow flex flex-col md:flex-row items-center gap-6 md:gap-10">
+        <img src={raffle.heroImage} alt="" class="w-full md:w-64 h-40 md:h-32 object-cover border-2 border-qvblack" />
+        <div class="flex-1 text-center md:text-left">
+          <p class="font-display uppercase tracking-[0.3em] text-xs text-qvblack/70 mb-2">Active fundraiser</p>
+          <h2 class="font-display text-2xl md:text-3xl uppercase text-qvblack mb-2">Father's Day Golf Raffle</h2>
+          <p class="text-qvblack/80 mb-4">Premium golf package — two foursomes, PING driver, Odyssey putter. {raffle.ticketPrice}. Drawing June 21.</p>
+          <a href="/raffle" class="inline-block bg-qvblack text-qvgold font-display uppercase tracking-wider text-sm px-6 py-3 hover:bg-gray-900">See Details &rarr;</a>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Featured sponsors -->
   <section class="py-16">

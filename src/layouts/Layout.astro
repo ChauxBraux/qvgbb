@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import RaffleBar from '../components/RaffleBar.astro';
 
 interface Props {
   title?: string;
@@ -61,6 +62,7 @@ const fullTitle = title === 'QV Girls Basketball Boosters' ? title : `${title} |
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
+    <RaffleBar />
     <Nav />
     <main>
       <slot />
