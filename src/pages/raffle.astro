@@ -19,7 +19,10 @@ const live = isRaffleLive();
       {live ? (
         <a href={raffle.zeffyUrl} target="_blank" rel="noopener" class="btn-primary">Buy Tickets on Zeffy &rarr;</a>
       ) : (
-        <p class="inline-block bg-qvgold text-qvblack font-display uppercase tracking-wider px-6 py-3">Raffle has ended — thank you!</p>
+        <div class="inline-block bg-qvgold text-qvblack px-6 py-4">
+          <p class="font-display uppercase tracking-wider text-sm">Raffle has ended</p>
+          {raffle.winner && <p class="font-display text-xl mt-1">Congratulations to our winner, {raffle.winner}!</p>}
+        </div>
       )}
     </div>
   </section>

@@ -2,8 +2,20 @@
 // To run this raffle again next year, just bump the dates and the prize list.
 // To end the campaign early, set `active` to false or move `endsAt` to a past date.
 
-export const raffle = {
-  active: true,
+export const raffle: {
+  active: boolean;
+  winner?: string;
+  title: string;
+  tagline: string;
+  ticketPrice: string;
+  drawDate: string;
+  endsAt: Date;
+  zeffyUrl: string;
+  heroImage: string;
+  prizes: string[];
+} = {
+  active: false,
+  winner: 'Samuel Thomas',
   title: "Father's Day Golf Raffle",
   tagline: 'Win a premium golf package — drawing Father\'s Day, June 21',
   ticketPrice: '$20 per chance',
