@@ -2,9 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { raffle, isRaffleLive } from '../lib/raffle';
+import { CURRENT_SPONSOR_YEAR } from '../lib/sponsors';
 const raffleLive = isRaffleLive();
 
-const sponsors = await getCollection('sponsors');
+const sponsors = await getCollection('sponsors', ({ data }) => data.year === CURRENT_SPONSOR_YEAR);
 const tierOrder = { elite_team: 0, champion: 1, game_changer: 2, all_star: 3, super_fan: 4 };
 const tierLabels: Record<string, string> = { elite_team: 'Elite Team', champion: 'Champion', game_changer: 'Game Changer', all_star: 'All Star', super_fan: 'Super Fan' };
 const topSponsors = sponsors

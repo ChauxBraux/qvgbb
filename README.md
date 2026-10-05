@@ -52,18 +52,26 @@ public/
 ## Common Tasks
 
 ### Add a new sponsor
-1. Create a new file in `src/content/sponsors/`, e.g. `acme-corp.mdx`
+1. Create a new file in the season's folder, e.g. `src/content/sponsors/2026/acme-corp.mdx`
 2. Use this template:
    ```yaml
    ---
    name: "Acme Corp"
-   contact: "Jane Doe"
+   contact: "Jane Doe"               # optional
    tier: "champion"    # elite_team | champion | game_changer | all_star | super_fan
    amount: 1000
-   year: 2026
+   year: 2026                        # fall the season starts (2026 = 2026-2027)
+   website: "https://acme.com/"      # optional
+   description: "One or two sentences about the business."   # optional
+   address: "123 Main St, Sewickley, PA 15143"               # optional
+   phone: "412-555-0100"             # optional
    ---
    ```
 3. Commit and push. The sponsor appears on `/sponsors` and may appear on the home page.
+
+### Start a new sponsorship season
+1. Make a new folder, e.g. `src/content/sponsors/2027/`, and add that season's sponsors.
+2. Change `CURRENT_SPONSOR_YEAR` in `src/lib/sponsors.ts`. The sponsors page, donate page, and home page all follow it, and last season's sponsors get a thank-you line on `/sponsors`.
 
 ### Add a news post or game recap
 1. Create a new file in `src/content/news/`, e.g. `vs-beaver-recap.mdx`
