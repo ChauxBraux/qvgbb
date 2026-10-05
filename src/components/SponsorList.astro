@@ -1,7 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
+import { CURRENT_SPONSOR_YEAR } from '../lib/sponsors';
 
-const sponsors = await getCollection('sponsors');
+interface Props {
+  year?: number;
+}
+const { year = CURRENT_SPONSOR_YEAR } = Astro.props;
+
+const sponsors = await getCollection('sponsors', ({ data }) => data.year === year);
 const tierOrder = ['elite_team', 'champion', 'game_changer', 'all_star', 'super_fan'];
 const tierLabels: Record<string, string> = {
   elite_team: 'Elite Team ($1,500)',
@@ -13,7 +19,9 @@ const tierLabels: Record<string, string> = {
 const grouped = tierOrder.map(tier => ({
   tier,
   label: tierLabels[tier],
-  items: sponsors.filter(s => s.data.tier === tier).sort((a, b) => (b.data.amount ?? 0) - (a.data.amount ?? 0)),
+  items: sponsors
+    .filter(s => s.data.tier === tier)
+    .sort((a, b) => (b.data.amount ?? 0) - (a.data.amount ?? 0) || a.data.name.localeCompare(b.data.name)),
 })).filter(g => g.items.length > 0);
 ---
 <div class="space-y-12">
@@ -26,13 +34,23 @@ const grouped = tierOrder.map(tier => ({
       </div>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
         {group.items.map(s => (
-          <div class="border-2 border-qvblack p-6 hover:border-qvgold transition-colors">
+          <div class="border-2 border-qvblack p-6 hover:border-qvgold transition-colors flex flex-col">
             {s.data.website ? (
               <a href={s.data.website} target="_blank" rel="noopener" class="font-display font-semibold text-lg hover:text-qvgold-700">{s.data.name}</a>
             ) : (
               <p class="font-display font-semibold text-lg">{s.data.name}</p>
             )}
             {s.data.contact && <p class="text-sm text-gray-600 mt-1">{s.data.contact}</p>}
+            {s.data.description && <p class="text-sm text-gray-700 mt-3">{s.data.description}</p>}
+            {(s.data.address || s.data.phone) && (
+              <div class="text-xs text-gray-500 mt-3 space-y-0.5">
+                {s.data.address && <p>{s.data.address}</p>}
+                {s.data.phone && <p><a href={`tel:${s.data.phone.replace(/[^0-9]/g, '')}`} class="hover:text-qvgold-700">{s.data.phone}</a></p>}
+              </div>
+            )}
+            {s.data.website && (
+              <a href={s.data.website} target="_blank" rel="noopener" class="mt-auto pt-4 text-xs uppercase tracking-wider font-display text-qvgold-700 hover:text-qvblack">Visit website &rarr;</a>
+            )}
           </div>
         ))}
       </div>

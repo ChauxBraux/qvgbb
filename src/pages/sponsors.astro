@@ -1,11 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SponsorList from '../components/SponsorList.astro';
+import { getCollection } from 'astro:content';
+import { CURRENT_SPONSOR_YEAR, seasonLabel } from '../lib/sponsors';
+
+const previousYear = CURRENT_SPONSOR_YEAR - 1;
+const pastSponsors = (await getCollection('sponsors', ({ data }) => data.year === previousYear))
+  .map(s => s.data.name)
+  .sort((a, b) => a.localeCompare(b));
 ---
 <Layout title="Sponsors" description="Thank you to the businesses and families supporting QV Girls Basketball.">
   <section class="bg-qvblack text-white py-16">
     <div class="container-narrow">
-      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">2025-2026 Season</p>
+      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">{seasonLabel(CURRENT_SPONSOR_YEAR)} Season</p>
       <h1 class="font-display text-4xl md:text-6xl uppercase">Our Sponsors</h1>
       <p class="text-lg text-gray-300 max-w-2xl mt-4">These are the people and businesses behind every gear bag, tournament fee, and team meal this season. Please support them.</p>
     </div>
@@ -17,10 +24,20 @@ import SponsorList from '../components/SponsorList.astro';
     </div>
   </section>
 
+  {pastSponsors.length > 0 && (
+    <section class="pb-16">
+      <div class="container-narrow">
+        <h2 class="font-display text-2xl uppercase mb-2">Thank You, {seasonLabel(previousYear)} Sponsors</h2>
+        <p class="text-gray-600 mb-4">We're still grateful to everyone who backed the girls last season.</p>
+        <p class="text-gray-800">{pastSponsors.join(' · ')}</p>
+      </div>
+    </section>
+  )}
+
   <section class="bg-gray-50 py-16">
     <div class="container-narrow text-center">
       <h2 class="font-display text-3xl uppercase mb-4">Become a Sponsor</h2>
-      <p class="text-gray-700 max-w-xl mx-auto mb-6">Interested in joining our sponsor family for the 2026-2027 season? We'd love to talk.</p>
+      <p class="text-gray-700 max-w-xl mx-auto mb-6">Interested in joining our sponsor family for the {seasonLabel(CURRENT_SPONSOR_YEAR)} season? We'd love to talk.</p>
       <a href="/contact" class="btn-secondary">Get in Touch</a>
     </div>
   </section>

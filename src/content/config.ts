@@ -9,6 +9,9 @@ const sponsors = defineCollection({
     amount: z.number().optional(),
     website: z.string().url().optional(),
     logo: z.string().optional(),
+    description: z.string().optional(),
+    address: z.string().optional(),
+    phone: z.string().optional(),
     year: z.number().default(2025),
   }),
 });
