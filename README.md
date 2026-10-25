@@ -73,6 +73,11 @@ public/
 1. Make a new folder, e.g. `src/content/sponsors/2027/`, and add that season's sponsors.
 2. Change `CURRENT_SPONSOR_YEAR` in `src/lib/sponsors.ts`. The sponsors page, donate page, and home page all follow it, and last season's sponsors get a thank-you line on `/sponsors`.
 
+### Update the youth program page
+All of the text on `/youth` lives in `src/data/youth.json`. Anything still in [brackets] is a placeholder and shows highlighted on the page.
+1. Replace the placeholders. Leave `registration.url` or `contact.email` as `""` until you have them.
+2. When the page is ready to share, change `"ready": false` to `"ready": true`. That adds "Youth" to the menu, removes the draft banner, and lets search engines find the page.
+
 ### Add a news post or game recap
 1. Create a new file in `src/content/news/`, e.g. `vs-beaver-recap.mdx`
 2. Use this template:

@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import youth from '../data/youth.json';
+
+// Text still in [brackets] is a placeholder. It's highlighted so it's easy
+// to spot on the preview, and should be replaced in src/data/youth.json.
+const isPlaceholder = (text: string) => text.includes('[');
+const mapsLink = (address: string) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+---
+<Layout
+  title="Youth Program"
+  description="Quaker Valley youth girls basketball for 2nd through 6th grade: registration, schedule, gyms, and FAQs."
+  noindex={!youth.ready}
+>
+  {!youth.ready && (
+    <div class="bg-yellow-100 border-b-2 border-yellow-400 text-yellow-900">
+      <div class="container-narrow py-3 text-sm">
+        <strong>Draft page.</strong> Highlighted text is placeholder content. This page is hidden from the menu and from search engines until <code>ready</code> is set to <code>true</code> in <code>src/data/youth.json</code>.
+      </div>
+    </div>
+  )}
+
+  <section class="bg-qvblack text-white py-16">
+    <div class="container-narrow">
+      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">{youth.season} Season · Grades 2–6</p>
+      <h1 class="font-display text-4xl md:text-6xl uppercase">Youth Girls Basketball</h1>
+      <p class="text-lg text-gray-300 max-w-2xl mt-4">{youth.intro}</p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        {youth.registration.url ? (
+          <a href={youth.registration.url} target="_blank" rel="noopener" class="btn-primary">Register Now</a>
+        ) : (
+          <span class="btn-primary opacity-60 cursor-not-allowed">Registration Link Coming Soon</span>
+        )}
+        <a href="#faq" class="btn-secondary !border-qvgold !text-qvgold hover:!bg-qvgold hover:!text-qvblack">Questions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key dates -->
+  <section class="py-16">
+    <div class="container-narrow">
+      <h2 class="font-display text-3xl uppercase mb-8">Season at a Glance</h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        {youth.keyDates.map(d => (
+          <div class="border-2 border-qvblack p-4">
+            <p class="font-display uppercase text-xs tracking-wider text-gray-500">{d.label}</p>
+            <p class:list={['font-display text-lg font-semibold mt-1', { 'bg-yellow-100': isPlaceholder(d.date) }]}>{d.date}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration -->
+  <section class="bg-gray-50 py-16">
+    <div class="container-narrow grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="font-display text-3xl uppercase mb-4">Registration</h2>
+        <p class:list={['text-gray-700', { 'bg-yellow-100': isPlaceholder(youth.registration.eligibility) }]}>{youth.registration.eligibility}</p>
+      </div>
+      <div class="bg-white border-2 border-qvblack p-6">
+        <p class="font-display uppercase text-xs tracking-wider text-gray-500">Fee</p>
+        <p class:list={['font-display text-2xl font-semibold mt-1', { 'bg-yellow-100': isPlaceholder(youth.registration.fee) }]}>{youth.registration.fee}</p>
+        <p class:list={['text-gray-700 mt-3', { 'bg-yellow-100': isPlaceholder(youth.registration.details) }]}>{youth.registration.details}</p>
+        {youth.registration.url && (
+          <a href={youth.registration.url} target="_blank" rel="noopener" class="btn-primary mt-6">Register Now</a>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Grade groups -->
+  <section class="py-16">
+    <div class="container-narrow">
+      <h2 class="font-display text-3xl uppercase mb-8">Practices &amp; Games</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        {youth.groups.map(g => (
+          <div class="border-2 border-qvblack p-6">
+            <h3 class:list={['font-display text-xl uppercase font-semibold', { 'bg-yellow-100': isPlaceholder(g.name) }]}>{g.name}</h3>
+            <dl class="mt-4 space-y-3 text-sm">
+              <div>
+                <dt class="font-display uppercase text-xs tracking-wider text-gray-500">Practice</dt>
+                <dd class:list={{ 'bg-yellow-100': isPlaceholder(g.practice) }}>{g.practice}</dd>
+              </div>
+              <div>
+                <dt class="font-display uppercase text-xs tracking-wider text-gray-500">Games</dt>
+                <dd class:list={{ 'bg-yellow-100': isPlaceholder(g.games) }}>{g.games}</dd>
+              </div>
+              <div>
+                <dt class="font-display uppercase text-xs tracking-wider text-gray-500">Notes</dt>
+                <dd class:list={{ 'bg-yellow-100': isPlaceholder(g.notes) }}>{g.notes}</dd>
+              </div>
+            </dl>
+          </div>
+        ))}
+      </div>
+      <p class="text-sm text-gray-600 mt-6">The full practice and game calendar will be posted here before the season starts.</p>
+    </div>
+  </section>
+
+  <!-- Gyms and what to bring -->
+  <section class="bg-gray-50 py-16">
+    <div class="container-narrow grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl uppercase mb-6">Gyms</h2>
+        <ul class="space-y-4">
+          {youth.gyms.map(g => (
+            <li class="bg-white border-2 border-qvblack p-4">
+              <p class:list={['font-display font-semibold text-lg', { 'bg-yellow-100': isPlaceholder(g.name) }]}>{g.name}</p>
+              <p class:list={['text-sm text-gray-700', { 'bg-yellow-100': isPlaceholder(g.address) }]}>{g.address}</p>
+              {!isPlaceholder(g.address) && (
+                <a href={mapsLink(g.address)} target="_blank" rel="noopener" class="text-xs uppercase tracking-wider font-display text-qvgold-700 hover:text-qvblack mt-2 inline-block">Directions &rarr;</a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-display text-3xl uppercase mb-6">What to Bring</h2>
+        <ul class="space-y-3">
+          {youth.whatToBring.map(item => (
+            <li class="flex gap-3">
+              <span class="text-qvgold-700 font-bold" aria-hidden="true">✓</span>
+              <span class:list={{ 'bg-yellow-100': isPlaceholder(item) }}>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weather -->
+  <section class="py-16">
+    <div class="container-narrow">
+      <h2 class="font-display text-3xl uppercase mb-4">Weather &amp; Cancellations</h2>
+      <p class:list={['text-gray-700 max-w-3xl', { 'bg-yellow-100': isPlaceholder(youth.weatherPolicy) }]}>{youth.weatherPolicy}</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-gray-50 py-16 scroll-mt-20">
+    <div class="container-narrow">
+      <h2 class="font-display text-3xl uppercase mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-3">
+        {youth.faqs.map(f => (
+          <details class="bg-white border-2 border-qvblack p-5 group">
+            <summary class="font-display font-semibold text-lg cursor-pointer list-none flex justify-between items-center gap-4">
+              {f.q}
+              <span class="text-qvgold-700 group-open:rotate-45 transition-transform text-2xl leading-none" aria-hidden="true">+</span>
+            </summary>
+            <p class:list={['text-gray-700 mt-3', { 'bg-yellow-100': isPlaceholder(f.a) }]}>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-16">
+    <div class="container-narrow text-center">
+      <h2 class="font-display text-3xl uppercase mb-4">Questions?</h2>
+      <p class:list={['text-gray-700', { 'bg-yellow-100': isPlaceholder(youth.contact.name) }]}>{youth.contact.name}</p>
+      {youth.contact.email ? (
+        <a href={`mailto:${youth.contact.email}`} class="btn-secondary mt-6">Email {youth.contact.email}</a>
+      ) : (
+        <p class="text-gray-700 mt-2 bg-yellow-100 inline-block">[Youth program email address]</p>
+      )}
+    </div>
+  </section>
+</Layout>
