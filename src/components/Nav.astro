@@ -1,6 +1,9 @@
 ---
+import youth from '../data/youth.json';
+
 const links = [
   { href: '/', label: 'Home' },
+  ...(youth.ready ? [{ href: '/youth', label: 'Youth' }] : []),
   { href: '/sponsors', label: 'Sponsors' },
   { href: '/schedule', label: 'Schedule' },
   { href: '/news', label: 'News' },
