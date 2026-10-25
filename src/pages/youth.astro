@@ -5,6 +5,13 @@ import youth from '../data/youth.json';
 // Text still in [brackets] is a placeholder. It's highlighted so it's easy
 // to spot on the preview, and should be replaced in src/data/youth.json.
 const isPlaceholder = (text: string) => text.includes('[');
+// Registration status: "open" or "late" shows a button to registration.url;
+// "closed" hides the button and shows registration.closedMessage instead.
+const reg = youth.registration;
+const regButton =
+  reg.url && reg.status === 'open' ? 'Register Now' :
+  reg.url && reg.status === 'late' ? 'Late Registration' :
+  null;
 const mapsLink = (address: string) =>
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 ---
@@ -27,10 +34,8 @@ const mapsLink = (address: string) =>
       <h1 class="font-display text-4xl md:text-6xl uppercase">Youth Girls Basketball</h1>
       <p class="text-lg text-gray-300 max-w-2xl mt-4">{youth.intro}</p>
       <div class="flex flex-wrap gap-3 mt-8">
-        {youth.registration.url ? (
-          <a href={youth.registration.url} target="_blank" rel="noopener" class="btn-primary">Register Now</a>
-        ) : (
-          <span class="btn-primary opacity-60 cursor-not-allowed">Registration Link Coming Soon</span>
+        {regButton && (
+          <a href={reg.url} target="_blank" rel="noopener" class="btn-primary">{regButton}</a>
         )}
         <a href="#faq" class="btn-secondary !border-qvgold !text-qvgold hover:!bg-qvgold hover:!text-qvblack">Questions</a>
       </div>
@@ -63,21 +68,26 @@ const mapsLink = (address: string) =>
         <p class="font-display uppercase text-xs tracking-wider text-gray-500">Fee</p>
         <p class:list={['font-display text-2xl font-semibold mt-1', { 'bg-yellow-100': isPlaceholder(youth.registration.fee) }]}>{youth.registration.fee}</p>
         <p class:list={['text-gray-700 mt-3', { 'bg-yellow-100': isPlaceholder(youth.registration.details) }]}>{youth.registration.details}</p>
-        {youth.registration.url && (
-          <a href={youth.registration.url} target="_blank" rel="noopener" class="btn-primary mt-6">Register Now</a>
+        {regButton ? (
+          <a href={reg.url} target="_blank" rel="noopener" class="btn-primary mt-6">{regButton}</a>
+        ) : reg.status === 'closed' ? (
+          <p class:list={['mt-6 border-t-2 border-gray-200 pt-4 text-gray-700', { 'bg-yellow-100': isPlaceholder(reg.closedMessage) }]}>{reg.closedMessage}</p>
+        ) : (
+          <p class="mt-6 text-gray-700 bg-yellow-100">[Registration link]</p>
         )}
       </div>
     </div>
   </section>
 
-  <!-- Grade groups -->
+  <!-- Divisions -->
   <section class="py-16">
     <div class="container-narrow">
       <h2 class="font-display text-3xl uppercase mb-8">Practices &amp; Games</h2>
-      <div class="grid md:grid-cols-3 gap-4">
+      <div class="grid md:grid-cols-2 gap-4">
         {youth.groups.map(g => (
           <div class="border-2 border-qvblack p-6">
-            <h3 class:list={['font-display text-xl uppercase font-semibold', { 'bg-yellow-100': isPlaceholder(g.name) }]}>{g.name}</h3>
+            <h3 class="font-display text-2xl uppercase font-semibold">{g.name}</h3>
+            <p class="font-display uppercase text-sm tracking-wider text-qvgold-700">{g.grades}</p>
             <dl class="mt-4 space-y-3 text-sm">
               <div>
                 <dt class="font-display uppercase text-xs tracking-wider text-gray-500">Practice</dt>
@@ -88,14 +98,14 @@ const mapsLink = (address: string) =>
                 <dd class:list={{ 'bg-yellow-100': isPlaceholder(g.games) }}>{g.games}</dd>
               </div>
               <div>
-                <dt class="font-display uppercase text-xs tracking-wider text-gray-500">Notes</dt>
-                <dd class:list={{ 'bg-yellow-100': isPlaceholder(g.notes) }}>{g.notes}</dd>
+                <dt class="font-display uppercase text-xs tracking-wider text-gray-500">Game Rules</dt>
+                <dd class:list={{ 'bg-yellow-100': isPlaceholder(g.rules) }}>{g.rules}</dd>
               </div>
             </dl>
           </div>
         ))}
       </div>
-      <p class="text-sm text-gray-600 mt-6">The full practice and game calendar will be posted here before the season starts.</p>
+      <p class:list={['text-gray-700 mt-6', { 'bg-yellow-100': isPlaceholder(youth.schedules) }]}>{youth.schedules}</p>
     </div>
   </section>
 

@@ -3,26 +3,68 @@
   "season": "2026-2027",
   "intro": "Quaker Valley youth girls basketball is a recreational program for girls in 2nd through 6th grade in the Quaker Valley School District. Every player learns the fundamentals, plays in games, and has fun with her friends.",
   "keyDates": [
-    { "label": "Registration opens", "date": "[date]" },
-    { "label": "Registration closes", "date": "[date]" },
-    { "label": "First practice", "date": "[date]" },
-    { "label": "First game", "date": "[date]" },
-    { "label": "Last game", "date": "[date]" }
+    {
+      "label": "Registration opened",
+      "date": "[date]"
+    },
+    {
+      "label": "Registration closed",
+      "date": "[date]"
+    },
+    {
+      "label": "First practice",
+      "date": "[date]"
+    },
+    {
+      "label": "First game",
+      "date": "[date]"
+    },
+    {
+      "label": "Last game",
+      "date": "[date]"
+    }
   ],
   "registration": {
+    "status": "closed",
     "url": "",
     "eligibility": "Open to girls in 2nd through 6th grade [who live in or attend school in the Quaker Valley School District].",
-    "fee": "[$ amount per player]",
-    "details": "[Sibling discount, scholarship policy, or what the fee covers]"
+    "fee": "$175 per player",
+    "details": "[Scholarship policy and what the fee covers]",
+    "closedMessage": "Registration for the 2026-2027 season is closed. [Whether late registrations are accepted, and who to contact]"
   },
   "groups": [
-    { "name": "[2nd & 3rd Grade]", "practice": "[day and time]", "games": "[day and time]", "notes": "[ball size, basket height]" },
-    { "name": "[4th Grade]", "practice": "[day and time]", "games": "[day and time]", "notes": "[ball size, basket height]" },
-    { "name": "[5th & 6th Grade]", "practice": "[day and time]", "games": "[day and time]", "notes": "[ball size, basket height]" }
+    {
+      "name": "JV",
+      "grades": "2nd–4th Grade",
+      "practice": "[day and time]",
+      "games": "[game night and time]",
+      "rules": "[game length, ball size, basket height]"
+    },
+    {
+      "name": "Varsity",
+      "grades": "5th–6th Grade",
+      "practice": "[day and time]",
+      "games": "[game night and time]",
+      "rules": "[game length, ball size, basket height]"
+    }
   ],
   "gyms": [
-    { "name": "[Gym name]", "address": "[Street address, town, PA zip]" },
-    { "name": "[Gym name]", "address": "[Street address, town, PA zip]" }
+    {
+      "name": "[Gym name]",
+      "address": "[Street address, town, PA zip]"
+    },
+    {
+      "name": "[Gym name]",
+      "address": "[Street address, town, PA zip]"
+    },
+    {
+      "name": "[Gym name]",
+      "address": "[Street address, town, PA zip]"
+    },
+    {
+      "name": "[Gym name]",
+      "address": "[Street address, town, PA zip]"
+    }
   ],
   "whatToBring": [
     "Basketball sneakers (clean, non-marking soles)",
@@ -32,14 +74,34 @@
   ],
   "weatherPolicy": "[Who decides on cancellations, by what time, and how families are told. For example: decisions are made by 3:00 PM and posted at the top of this website, emailed, and texted to families.]",
   "faqs": [
-    { "q": "Does my daughter need experience to sign up?", "a": "[Answer]" },
-    { "q": "How are teams formed?", "a": "[Answer]" },
-    { "q": "What if we have to miss a practice or game?", "a": "[Answer]" },
-    { "q": "How do I get uniforms?", "a": "[Answer: when sizes are collected, when uniforms are handed out]" },
-    { "q": "Can I volunteer to coach?", "a": "Yes, we rely on volunteer coaches. All coaches need Pennsylvania clearances before the season starts. [How to sign up]" }
+    {
+      "q": "Does my daughter need experience to sign up?",
+      "a": "[Answer]"
+    },
+    {
+      "q": "How are teams formed?",
+      "a": "[Answer]"
+    },
+    {
+      "q": "What if we have to miss a practice or game?",
+      "a": "[Answer]"
+    },
+    {
+      "q": "How do I get uniforms?",
+      "a": "[Answer: when sizes are collected, when uniforms are handed out]"
+    },
+    {
+      "q": "What is the Friday skills camp?",
+      "a": "[Answer: who it's for, when and where it meets, and whether it costs extra]"
+    },
+    {
+      "q": "Can I volunteer to coach?",
+      "a": "Yes, we rely on volunteer coaches. All coaches need Pennsylvania clearances before the season starts. [How to sign up]"
+    }
   ],
   "contact": {
     "name": "[Your full name], Youth Program Commissioner",
     "email": ""
-  }
+  },
+  "schedules": "Each team's practice and game schedule is in the GameChanger app. [How families get their GameChanger invite]"
 }
