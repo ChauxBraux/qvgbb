@@ -76,7 +76,7 @@ public/
 ### Update the youth program page
 All of the text on `/youth` lives in `src/data/youth.json`. Anything still in [brackets] is a placeholder and shows highlighted on the page.
 1. Replace the placeholders. Leave `registration.url` or `contact.email` as `""` until you have them.
-   - `registration.status` controls the registration button: `"open"` shows "Register Now", `"late"` shows "Late Registration", and `"closed"` hides the button and shows `registration.closedMessage`. The button only appears when `registration.url` is filled in.
+   - `registration.status` controls the registration section: `"open"` shows a "Register Now" button, `"late"` shows a "Late Registration" button plus `registration.message`, and `"closed"` shows only `registration.message`. The button only appears when `registration.url` is filled in.
 2. When the page is ready to share, change `"ready": false` to `"ready": true`. That adds "Youth" to the menu, removes the draft banner, and lets search engines find the page.
 
 ### Add a news post or game recap

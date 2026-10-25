@@ -25,12 +25,12 @@
     }
   ],
   "registration": {
-    "status": "closed",
+    "status": "late",
     "url": "",
     "eligibility": "Open to girls in 2nd through 6th grade [who live in or attend school in the Quaker Valley School District].",
     "fee": "$175 per player",
     "details": "[Scholarship policy and what the fee covers]",
-    "closedMessage": "Registration for the 2026-2027 season is closed. [Whether late registrations are accepted, and who to contact]"
+    "message": "Registration for the 2026-2027 season has closed, but late registrations are still accepted. [How to register late: the link, any deadline, and any late fee]"
   },
   "groups": [
     {

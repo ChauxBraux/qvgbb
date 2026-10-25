@@ -5,13 +5,14 @@ import youth from '../data/youth.json';
 // Text still in [brackets] is a placeholder. It's highlighted so it's easy
 // to spot on the preview, and should be replaced in src/data/youth.json.
 const isPlaceholder = (text: string) => text.includes('[');
-// Registration status: "open" or "late" shows a button to registration.url;
-// "closed" hides the button and shows registration.closedMessage instead.
+// Registration status: "open" or "late" shows a button to registration.url
+// once it's filled in. "late" and "closed" also show registration.message.
 const reg = youth.registration;
 const regButton =
   reg.url && reg.status === 'open' ? 'Register Now' :
   reg.url && reg.status === 'late' ? 'Late Registration' :
   null;
+const regHeading = reg.status === 'late' ? 'Late Registration' : 'Registration';
 const mapsLink = (address: string) =>
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 ---
@@ -34,8 +35,8 @@ const mapsLink = (address: string) =>
       <h1 class="font-display text-4xl md:text-6xl uppercase">Youth Girls Basketball</h1>
       <p class="text-lg text-gray-300 max-w-2xl mt-4">{youth.intro}</p>
       <div class="flex flex-wrap gap-3 mt-8">
-        {regButton && (
-          <a href={reg.url} target="_blank" rel="noopener" class="btn-primary">{regButton}</a>
+        {reg.status !== 'closed' && (
+          <a href="#registration" class="btn-primary">{regHeading}</a>
         )}
         <a href="#faq" class="btn-secondary !border-qvgold !text-qvgold hover:!bg-qvgold hover:!text-qvblack">Questions</a>
       </div>
@@ -57,30 +58,8 @@ const mapsLink = (address: string) =>
     </div>
   </section>
 
-  <!-- Registration -->
-  <section class="bg-gray-50 py-16">
-    <div class="container-narrow grid md:grid-cols-2 gap-8 items-start">
-      <div>
-        <h2 class="font-display text-3xl uppercase mb-4">Registration</h2>
-        <p class:list={['text-gray-700', { 'bg-yellow-100': isPlaceholder(youth.registration.eligibility) }]}>{youth.registration.eligibility}</p>
-      </div>
-      <div class="bg-white border-2 border-qvblack p-6">
-        <p class="font-display uppercase text-xs tracking-wider text-gray-500">Fee</p>
-        <p class:list={['font-display text-2xl font-semibold mt-1', { 'bg-yellow-100': isPlaceholder(youth.registration.fee) }]}>{youth.registration.fee}</p>
-        <p class:list={['text-gray-700 mt-3', { 'bg-yellow-100': isPlaceholder(youth.registration.details) }]}>{youth.registration.details}</p>
-        {regButton ? (
-          <a href={reg.url} target="_blank" rel="noopener" class="btn-primary mt-6">{regButton}</a>
-        ) : reg.status === 'closed' ? (
-          <p class:list={['mt-6 border-t-2 border-gray-200 pt-4 text-gray-700', { 'bg-yellow-100': isPlaceholder(reg.closedMessage) }]}>{reg.closedMessage}</p>
-        ) : (
-          <p class="mt-6 text-gray-700 bg-yellow-100">[Registration link]</p>
-        )}
-      </div>
-    </div>
-  </section>
-
   <!-- Divisions -->
-  <section class="py-16">
+  <section class="bg-gray-50 py-16">
     <div class="container-narrow">
       <h2 class="font-display text-3xl uppercase mb-8">Practices &amp; Games</h2>
       <div class="grid md:grid-cols-2 gap-4">
@@ -110,7 +89,7 @@ const mapsLink = (address: string) =>
   </section>
 
   <!-- Gyms and what to bring -->
-  <section class="bg-gray-50 py-16">
+  <section class="py-16">
     <div class="container-narrow grid md:grid-cols-2 gap-12">
       <div>
         <h2 class="font-display text-3xl uppercase mb-6">Gyms</h2>
@@ -141,10 +120,33 @@ const mapsLink = (address: string) =>
   </section>
 
   <!-- Weather -->
-  <section class="py-16">
+  <section class="bg-gray-50 py-16">
     <div class="container-narrow">
       <h2 class="font-display text-3xl uppercase mb-4">Weather &amp; Cancellations</h2>
       <p class:list={['text-gray-700 max-w-3xl', { 'bg-yellow-100': isPlaceholder(youth.weatherPolicy) }]}>{youth.weatherPolicy}</p>
+    </div>
+  </section>
+
+  <!-- Registration -->
+  <section id="registration" class="py-16 scroll-mt-20">
+    <div class="container-narrow grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="font-display text-3xl uppercase mb-4">{regHeading}</h2>
+        <p class:list={['text-gray-700', { 'bg-yellow-100': isPlaceholder(youth.registration.eligibility) }]}>{youth.registration.eligibility}</p>
+      </div>
+      <div class="bg-gray-50 border-2 border-qvblack p-6">
+        <p class="font-display uppercase text-xs tracking-wider text-gray-500">Fee</p>
+        <p class:list={['font-display text-2xl font-semibold mt-1', { 'bg-yellow-100': isPlaceholder(youth.registration.fee) }]}>{youth.registration.fee}</p>
+        <p class:list={['text-gray-700 mt-3', { 'bg-yellow-100': isPlaceholder(youth.registration.details) }]}>{youth.registration.details}</p>
+        {reg.status !== 'open' && (
+          <p class:list={['mt-6 border-t-2 border-gray-200 pt-4 text-gray-700', { 'bg-yellow-100': isPlaceholder(reg.message) }]}>{reg.message}</p>
+        )}
+        {regButton ? (
+          <a href={reg.url} target="_blank" rel="noopener" class="btn-primary mt-6">{regButton}</a>
+        ) : reg.status !== 'closed' && (
+          <p class="mt-6 text-gray-700 bg-yellow-100">[Registration link]</p>
+        )}
+      </div>
     </div>
   </section>
 
