@@ -1,0 +1,72 @@
+[
+  {
+    "date": "2026-12-07",
+    "opponent": "Riverside",
+    "location": "Riverside High School",
+    "time": "6:00 PM",
+    "homeAway": "away"
+  },
+  {
+    "date": "2026-12-10",
+    "opponent": "Seton LaSalle",
+    "location": "QV High School",
+    "time": "6:00 PM",
+    "homeAway": "home"
+  },
+  {
+    "date": "2026-12-14",
+    "opponent": "Northgate",
+    "location": "Northgate High School",
+    "time": "6:00 PM",
+    "homeAway": "away"
+  },
+  {
+    "date": "2026-12-17",
+    "opponent": "Steel Valley",
+    "location": "QV High School",
+    "time": "6:00 PM",
+    "homeAway": "home"
+  },
+  {
+    "date": "2027-01-04",
+    "opponent": "Keystone Oaks",
+    "location": "QV High School",
+    "time": "6:00 PM",
+    "homeAway": "home"
+  },
+  {
+    "date": "2027-01-11",
+    "opponent": "Avonworth",
+    "location": "QV High School",
+    "time": "6:00 PM",
+    "homeAway": "home"
+  },
+  {
+    "date": "2027-01-14",
+    "opponent": "Seton LaSalle",
+    "location": "Seton LaSalle High School",
+    "time": "6:00 PM",
+    "homeAway": "away"
+  },
+  {
+    "date": "2027-01-18",
+    "opponent": "Northgate",
+    "location": "QV High School",
+    "time": "6:00 PM",
+    "homeAway": "home"
+  },
+  {
+    "date": "2027-01-25",
+    "opponent": "Propel Braddock Hills",
+    "location": "QV High School",
+    "time": "6:00 PM",
+    "homeAway": "home"
+  },
+  {
+    "date": "2027-02-04",
+    "opponent": "Avonworth",
+    "location": "Avonworth High School",
+    "time": "6:00 PM",
+    "homeAway": "away"
+  }
+]

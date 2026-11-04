@@ -1,182 +1,143 @@
 [
   {
-    "date": "2025-11-29",
-    "opponent": "Montour",
-    "location": "Montour High School",
-    "time": "7:30 PM",
-    "homeAway": "away",
-    "result": "L 60-62"
-  },
-  {
-    "date": "2025-12-11",
-    "opponent": "Beaver Falls",
-    "location": "Beaver Falls High School",
-    "time": "7:30 PM",
-    "homeAway": "away",
-    "result": "L 48-52"
-  },
-  {
-    "date": "2025-12-13",
-    "opponent": "Chartiers Valley",
+    "date": "2026-12-01",
+    "opponent": "Seneca Valley",
     "location": "QV High School",
-    "time": "4:00 PM",
+    "time": "6:00 PM",
     "homeAway": "home",
-    "result": "W 47-34"
+    "note": "Scrimmage, with Mars Area"
   },
   {
-    "date": "2025-12-15",
-    "opponent": "Sto-Rox",
-    "location": "QV High School",
-    "time": "7:30 PM",
-    "homeAway": "home",
-    "result": "W 65-18"
+    "date": "2026-12-05",
+    "opponent": "Rochester",
+    "location": "Lincoln Park",
+    "time": "2:00 PM",
+    "homeAway": "away"
   },
   {
-    "date": "2025-12-18",
-    "opponent": "Our Lady of the Sacred Heart",
-    "location": "QV High School",
-    "time": "7:30 PM",
-    "homeAway": "home",
-    "result": "W 49-30"
+    "date": "2026-12-06",
+    "opponent": "Lincoln Park",
+    "location": "Lincoln Park",
+    "time": "1:30 PM",
+    "homeAway": "away"
   },
   {
-    "date": "2025-12-22",
+    "date": "2026-12-07",
     "opponent": "Riverside",
     "location": "Riverside High School",
     "time": "7:30 PM",
-    "homeAway": "away",
-    "result": "W 46-18"
+    "homeAway": "away"
   },
   {
-    "date": "2026-01-05",
-    "opponent": "New Brighton",
+    "date": "2026-12-10",
+    "opponent": "Seton LaSalle",
     "location": "QV High School",
     "time": "7:30 PM",
-    "homeAway": "home",
-    "result": "W 71-4"
+    "homeAway": "home"
   },
   {
-    "date": "2026-01-08",
-    "opponent": "Mohawk Area",
-    "location": "Mohawk High School",
-    "time": "7:00 PM",
-    "homeAway": "away",
-    "result": "W 36-20"
+    "date": "2026-12-14",
+    "opponent": "Northgate",
+    "location": "Northgate High School",
+    "time": "7:30 PM",
+    "homeAway": "away"
   },
   {
-    "date": "2026-01-12",
-    "opponent": "Ellwood City",
-    "location": "QV High School",
-    "time": "7:00 PM",
-    "homeAway": "home",
-    "result": "W 54-30"
-  },
-  {
-    "date": "2026-01-15",
-    "opponent": "Beaver Falls",
+    "date": "2026-12-17",
+    "opponent": "Steel Valley",
     "location": "QV High School",
     "time": "7:30 PM",
-    "homeAway": "home",
-    "result": "L 48-51"
+    "homeAway": "home"
   },
   {
-    "date": "2026-01-16",
-    "opponent": "Winchester Thurston",
+    "date": "2026-12-21",
+    "opponent": "Propel Braddock Hills",
+    "location": "Propel Andrew Street High School",
+    "time": "6:00 PM",
+    "homeAway": "away"
+  },
+  {
+    "date": "2026-12-22",
+    "opponent": "Union Area",
     "location": "QV High School",
-    "time": "7:30 PM",
-    "homeAway": "home",
-    "result": "W 53-41"
+    "time": "6:30 PM",
+    "homeAway": "home"
   },
   {
-    "date": "2026-01-19",
-    "opponent": "Sto-Rox",
-    "location": "Sto-Rox High School",
-    "time": "7:30 PM",
-    "homeAway": "away",
-    "result": "W 57-24"
-  },
-  {
-    "date": "2026-01-22",
-    "opponent": "Our Lady of the Sacred Heart",
-    "location": "OLSH",
-    "time": "7:30 PM",
-    "homeAway": "away",
-    "result": "W 37-36"
-  },
-  {
-    "date": "2026-01-29",
-    "opponent": "New Brighton",
-    "location": "New Brighton High School",
-    "time": "7:00 PM",
-    "homeAway": "away",
-    "result": "W 58-8"
-  },
-  {
-    "date": "2026-02-02",
-    "opponent": "Mohawk Area",
-    "location": "QV High School",
-    "time": "7:30 PM",
-    "homeAway": "home",
-    "result": "W 58-18"
-  },
-  {
-    "date": "2026-02-04",
-    "opponent": "Riverside",
-    "location": "QV High School",
-    "time": "7:30 PM",
-    "homeAway": "home",
-    "result": "W 61-30"
-  },
-  {
-    "date": "2026-02-05",
-    "opponent": "Ellwood City",
-    "location": "Ellwood City High School",
-    "time": "7:00 PM",
-    "homeAway": "away",
-    "result": "W 58-25"
-  },
-  {
-    "date": "2026-02-09",
-    "opponent": "Rochester",
-    "location": "Rochester High School",
-    "time": "7:00 PM",
-    "homeAway": "away",
-    "result": "W 53-31"
-  },
-  {
-    "date": "2026-02-13",
+    "date": "2027-01-04",
     "opponent": "Keystone Oaks",
     "location": "QV High School",
-    "time": "7:00 PM",
-    "homeAway": "home",
-    "result": "W 50-36",
-    "note": "WPIAL First Round"
+    "time": "7:30 PM",
+    "homeAway": "home"
   },
   {
-    "date": "2026-02-20",
+    "date": "2027-01-07",
+    "opponent": "Carlynton",
+    "location": "Carlynton Jr/Sr High School",
+    "time": "7:00 PM",
+    "homeAway": "away"
+  },
+  {
+    "date": "2027-01-11",
     "opponent": "Avonworth",
     "location": "QV High School",
-    "time": "7:00 PM",
-    "homeAway": "home",
-    "result": "W 54-35",
-    "note": "WPIAL Consolation"
+    "time": "7:30 PM",
+    "homeAway": "home"
   },
   {
-    "date": "2026-02-23",
-    "opponent": "Our Lady of the Sacred Heart",
+    "date": "2027-01-14",
+    "opponent": "Seton LaSalle",
+    "location": "Seton LaSalle High School",
+    "time": "7:30 PM",
+    "homeAway": "away"
+  },
+  {
+    "date": "2027-01-18",
+    "opponent": "Northgate",
     "location": "QV High School",
-    "time": "7:00 PM",
-    "homeAway": "home",
-    "result": "W 41-25",
-    "note": "WPIAL Consolation"
+    "time": "7:30 PM",
+    "homeAway": "home"
   },
   {
-    "date": "2026-03-06",
-    "opponent": "Northwestern",
-    "location": "Northwestern High School",
-    "time": "7:00 PM",
-    "homeAway": "away",
-    "result": "L 22-35",
-    "note": "PIAA First Round"
+    "date": "2027-01-21",
+    "opponent": "Steel Valley",
+    "location": "Steel Valley High School",
+    "time": "7:30 PM",
+    "homeAway": "away"
+  },
+  {
+    "date": "2027-01-25",
+    "opponent": "Propel Braddock Hills",
+    "location": "QV High School",
+    "time": "7:30 PM",
+    "homeAway": "home"
+  },
+  {
+    "date": "2027-01-28",
+    "opponent": "Keystone Oaks",
+    "location": "Keystone Oaks High School",
+    "time": "6:00 PM",
+    "homeAway": "away"
+  },
+  {
+    "date": "2027-02-01",
+    "opponent": "Carlynton",
+    "location": "QV High School",
+    "time": "6:30 PM",
+    "homeAway": "home"
+  },
+  {
+    "date": "2027-02-04",
+    "opponent": "Avonworth",
+    "location": "Avonworth High School",
+    "time": "7:30 PM",
+    "homeAway": "away"
+  },
+  {
+    "date": "2027-02-08",
+    "opponent": "Ambridge",
+    "location": "Ambridge Area High School",
+    "time": "7:30 PM",
+    "homeAway": "away"
   }
 ]
