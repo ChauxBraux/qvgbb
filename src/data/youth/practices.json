@@ -8,11 +8,11 @@
   "slots": [
     { "team": "Wings", "league": "JV", "day": "Monday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
     { "team": "Fire", "league": "JV", "day": "Monday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
-    { "team": "Aces", "league": "JV", "day": "Tuesday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
-    { "team": "Sparks", "league": "JV", "day": "Tuesday", "start": "18:15", "end": "19:30", "location": "Osborne Elementary", "from": "2026-11-09", "confirmed": true },
-    { "team": "Storm", "league": "Varsity", "day": "Wednesday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
-    { "team": "Sky", "league": "Varsity", "day": "Wednesday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
-    { "team": "Valkyries", "league": "Varsity", "day": "Thursday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
-    { "team": "Lynx", "league": "Varsity", "day": "Thursday", "start": "19:30", "end": "20:45", "location": "Edgeworth Elementary", "from": "2026-11-09", "confirmed": false }
+    { "team": "Aces", "league": "JV", "day": "Tuesday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-10", "confirmed": true },
+    { "team": "Sparks", "league": "JV", "day": "Tuesday", "start": "18:15", "end": "19:30", "location": "Osborne Elementary", "from": "2026-11-10", "confirmed": true },
+    { "team": "Storm", "league": "Varsity", "day": "Wednesday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-04", "confirmed": true },
+    { "team": "Sky", "league": "Varsity", "day": "Wednesday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-04", "confirmed": true },
+    { "team": "Valkyries", "league": "Varsity", "day": "Thursday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-05", "confirmed": true },
+    { "team": "Lynx", "league": "Varsity", "day": "Thursday", "start": "19:30", "end": "20:45", "location": "Edgeworth Elementary", "from": "2026-11-05", "confirmed": true }
   ]
 }
