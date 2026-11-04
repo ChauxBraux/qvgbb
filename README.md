@@ -30,7 +30,8 @@ src/
     sponsors/      One MDX file per sponsor
     news/          Blog posts / recaps
   data/
-    schedule.json  Game schedule (edit to update)
+    schedule.json     Varsity game schedule (edit to update)
+    schedule-jv.json  JV game schedule (same format)
   layouts/
     Layout.astro   Base layout with nav, footer, meta tags
   pages/
@@ -102,6 +103,10 @@ Edit `src/data/schedule.json`. Each entry:
 }
 ```
 Add `result` to past games. Future games (no result) auto-appear in Upcoming.
+An optional `note` shows under the opponent (for example "Scrimmage" or "WPIAL First Round").
+JV games go in `src/data/schedule-jv.json` in the same format.
+For a new season, replace both files and change `SEASON_LABEL` at the top of `src/pages/schedule.astro`.
+The 2026-27 games came from QV's athletics calendar on ArbiterLive (linked from qvquakers.org).
 
 ### Youth league page (/youth)
 The youth page shows the next 7 days of games and practices plus JV and Varsity standings.

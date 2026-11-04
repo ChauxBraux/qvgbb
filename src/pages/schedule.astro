@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import schedule from '../data/schedule.json';
+import varsitySchedule from '../data/schedule.json';
+import jvSchedule from '../data/schedule-jv.json';
+
+// Season shown at the top of the page. Change this when a new season's games go in.
+const SEASON_LABEL = '2026-2027 Season';
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -15,33 +19,53 @@ type Game = {
   note?: string;
 };
 
-const games = (schedule as Game[]).sort((a, b) => new Date(a.date).valueOf() - new Date(b.date).valueOf());
+const byDate = (a: Game, b: Game) => new Date(a.date).valueOf() - new Date(b.date).valueOf();
+const isScrimmage = (g: Game) => g.note?.toLowerCase().startsWith('scrimmage') ?? false;
+const formatDate = (d: string) =>
+  new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+const formatDay = (d: string) =>
+  new Date(d).toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' });
+
+const games = (varsitySchedule as Game[]).sort(byDate);
 const upcoming = games.filter(g => new Date(g.date) >= today);
 const past = games.filter(g => new Date(g.date) < today).reverse();
 const wins = games.filter(g => g.result?.startsWith('W')).length;
 const losses = games.filter(g => g.result?.startsWith('L')).length;
+const hasResults = wins + losses > 0;
+const gameCount = games.filter(g => !isScrimmage(g)).length;
+const homeOpener = games.find(g => g.homeAway === 'home' && !isScrimmage(g));
+
+const jvGames = (jvSchedule as Game[]).sort(byDate);
+const jvUpcoming = jvGames.filter(g => new Date(g.date) >= today);
+const jvPast = jvGames.filter(g => new Date(g.date) < today).reverse();
 ---
 <Layout title="Schedule" description="Game schedule and results for QV Girls Basketball.">
   <section class="bg-qvblack text-white py-16">
     <div class="container-narrow">
-      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">2025-2026 Season</p>
+      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">{SEASON_LABEL}</p>
       <h1 class="font-display text-4xl md:text-6xl uppercase">Schedule</h1>
     </div>
   </section>
 
   <section class="bg-qvgold py-4">
     <div class="container-narrow flex flex-wrap justify-center gap-6 text-qvblack font-display uppercase tracking-wider text-sm font-semibold">
-      <span>19-8 Overall</span>
-      <span class="hidden sm:inline">|</span>
-      <span>12-2 Section 1-3A</span>
-      <span class="hidden sm:inline">|</span>
-      <span>PIAA First Round</span>
+      {hasResults ? (
+        <span>{wins}-{losses} Overall</span>
+      ) : (
+        <span>{gameCount} Varsity Games</span>
+      )}
+      {homeOpener && (
+        <>
+          <span class="hidden sm:inline">|</span>
+          <span>Home Opener {formatDate(homeOpener.date)} vs {homeOpener.opponent}</span>
+        </>
+      )}
     </div>
   </section>
 
   <section class="py-12">
     <div class="container-narrow">
-      <h2 class="font-display text-2xl uppercase mb-6 border-l-4 border-qvgold pl-3">Upcoming Games</h2>
+      <h2 class="font-display text-2xl uppercase mb-6 border-l-4 border-qvgold pl-3">Varsity Upcoming Games</h2>
       {upcoming.length === 0 ? (
         <p class="text-gray-600">No upcoming games scheduled. Check back soon.</p>
       ) : (
@@ -58,13 +82,17 @@ const losses = games.filter(g => g.result?.startsWith('L')).length;
             <tbody>
               {upcoming.map(g => (
                 <tr class="border-t border-gray-100 hover:bg-gray-50">
-                  <td class="py-4 font-medium">{new Date(g.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
+                  <td class="py-4 font-medium whitespace-nowrap">
+                    <span class="text-xs text-gray-500 mr-1">{formatDay(g.date)}</span>
+                    {formatDate(g.date)}
+                  </td>
                   <td class="py-4">
                     <span class="text-xs uppercase font-display text-qvgold-700 mr-2">{g.homeAway === 'home' ? 'vs' : '@'}</span>
                     {g.opponent}
+                    {g.note && <span class="block text-xs text-gray-500 mt-1">{g.note}</span>}
                   </td>
                   <td class="py-4 text-gray-600">{g.location}</td>
-                  <td class="py-4">{g.time}</td>
+                  <td class="py-4 whitespace-nowrap">{g.time}</td>
                 </tr>
               ))}
             </tbody>
@@ -74,10 +102,48 @@ const losses = games.filter(g => g.result?.startsWith('L')).length;
     </div>
   </section>
 
+  {jvUpcoming.length > 0 && (
+    <section class="py-12 border-t border-gray-100">
+      <div class="container-narrow">
+        <h2 class="font-display text-2xl uppercase mb-2 border-l-4 border-qvgold pl-3">JV Upcoming Games</h2>
+        <p class="text-gray-600 text-sm mb-6">JV games tip off before the varsity game on the same night.</p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-t border-gray-200">
+            <thead class="text-xs uppercase tracking-wider text-gray-500 font-display">
+              <tr>
+                <th scope="col" class="py-3">Date</th>
+                <th scope="col" class="py-3">Opponent</th>
+                <th scope="col" class="py-3">Location</th>
+                <th scope="col" class="py-3">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {jvUpcoming.map(g => (
+                <tr class="border-t border-gray-100 hover:bg-gray-50">
+                  <td class="py-4 font-medium whitespace-nowrap">
+                    <span class="text-xs text-gray-500 mr-1">{formatDay(g.date)}</span>
+                    {formatDate(g.date)}
+                  </td>
+                  <td class="py-4">
+                    <span class="text-xs uppercase font-display text-qvgold-700 mr-2">{g.homeAway === 'home' ? 'vs' : '@'}</span>
+                    {g.opponent}
+                    {g.note && <span class="block text-xs text-gray-500 mt-1">{g.note}</span>}
+                  </td>
+                  <td class="py-4 text-gray-600">{g.location}</td>
+                  <td class="py-4 whitespace-nowrap">{g.time}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )}
+
   {past.length > 0 && (
     <section class="py-12 bg-gray-50">
       <div class="container-narrow">
-        <h2 class="font-display text-2xl uppercase mb-6 border-l-4 border-qvgold pl-3">Results</h2>
+        <h2 class="font-display text-2xl uppercase mb-6 border-l-4 border-qvgold pl-3">Varsity Results</h2>
         <div class="overflow-x-auto">
           <table class="w-full text-left">
             <thead class="text-xs uppercase tracking-wider text-gray-500 font-display">
@@ -93,7 +159,7 @@ const losses = games.filter(g => g.result?.startsWith('L')).length;
                 const isLoss = g.result?.startsWith('L');
                 return (
                   <tr class="border-t border-gray-200">
-                    <td class="py-3">{new Date(g.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
+                    <td class="py-3">{formatDate(g.date)}</td>
                     <td class="py-3">
                       {g.homeAway === 'home' ? 'vs' : '@'} {g.opponent}
                       {g.note && <span class="text-xs text-qvgold-700 ml-2">({g.note})</span>}
@@ -108,4 +174,38 @@ const losses = games.filter(g => g.result?.startsWith('L')).length;
       </div>
     </section>
   )}
+
+  {jvPast.length > 0 && (
+    <section class="py-12 bg-gray-50 border-t border-gray-200">
+      <div class="container-narrow">
+        <h2 class="font-display text-2xl uppercase mb-6 border-l-4 border-qvgold pl-3">JV Results</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead class="text-xs uppercase tracking-wider text-gray-500 font-display">
+              <tr>
+                <th scope="col" class="py-3">Date</th>
+                <th scope="col" class="py-3">Opponent</th>
+                <th scope="col" class="py-3">Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              {jvPast.map(g => (
+                <tr class="border-t border-gray-200">
+                  <td class="py-3">{formatDate(g.date)}</td>
+                  <td class="py-3">{g.homeAway === 'home' ? 'vs' : '@'} {g.opponent}</td>
+                  <td class="py-3 font-medium">{g.result ?? '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="py-8">
+    <div class="container-narrow">
+      <p class="text-xs text-gray-500">Schedule comes from the Quaker Valley athletics calendar and can change. Check with the school for weather or schedule updates.</p>
+    </div>
+  </section>
 </Layout>
