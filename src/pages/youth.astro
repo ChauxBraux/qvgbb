@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+import gc from '../data/youth/gamechanger.json';
+import practicesJson from '../data/youth/practices.json';
+import {
+  addDays,
+  buildDays,
+  easternDate,
+  firstGameLabel,
+  formatPct,
+  type GameChangerData,
+  type PracticeData,
+} from '../lib/youth';
+
+const data = gc as GameChangerData;
+const practices = practicesJson as PracticeData;
+
+// The page is rebuilt whenever the GameChanger data changes, but it may sit
+// for days between builds. So render every remaining day of the season and let
+// the small script at the bottom show the right 7 days in the visitor's browser.
+// Without JavaScript, the 7 days starting on the build date show.
+const today = easternDate(new Date());
+const lastGame = data.leagues
+  .flatMap(l => l.games.map(g => easternDate(new Date(g.start))))
+  .sort()
+  .at(-1);
+const seasonLast = [lastGame, practices.seasonEnd].filter(Boolean).sort().at(-1) as string;
+const from = addDays(today, -1);
+const to = seasonLast > addDays(today, 6) ? seasonLast : addDays(today, 6);
+const days = buildDays(data, practices, from, to);
+const windowEnd = addDays(today, 6);
+
+const allTeams = data.leagues.map(l => ({ league: l.name, teams: [...l.teams].sort() }));
+const updated = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'America/New_York',
+  month: 'short',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: '2-digit',
+}).format(new Date(data.fetchedAt));
+---
+<Layout title="Youth League" description="This week's games and practices and the league standings for the Quaker Valley youth girls basketball league.">
+  <section class="bg-qvblack text-white py-16">
+    <div class="container-narrow">
+      <p class="text-qvgold font-display uppercase tracking-[0.3em] text-sm mb-3">2026-27 Youth League</p>
+      <h1 class="font-display text-4xl md:text-6xl uppercase">Youth Basketball</h1>
+      <p class="mt-4 text-gray-300 max-w-2xl">Games and practices for the next seven days, plus JV and Varsity standings. Games are at RIZE Sports. JV plays Wednesday nights and Varsity plays Monday nights.</p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container-narrow">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
+        <h2 class="font-display text-2xl uppercase border-l-4 border-qvgold pl-3">This Week</h2>
+        <label class="text-sm text-gray-600 flex items-center gap-2">
+          <span class="font-display uppercase tracking-wider text-xs">Show</span>
+          <select id="team-filter" class="border border-gray-300 rounded-md px-3 py-2 text-sm bg-white text-qvblack">
+            <option value="">All teams</option>
+            {allTeams.map(group => (
+              <optgroup label={group.league}>
+                {group.teams.map(t => <option value={t}>{t}</option>)}
+              </optgroup>
+            ))}
+          </select>
+        </label>
+      </div>
+
+      <p id="season-over" class="hidden text-gray-600">The 2026-27 youth season has wrapped up. Thanks for a great year.</p>
+
+      <div id="week" class="divide-y divide-gray-200 border-y border-gray-200">
+        {days.map(day => (
+          <div class="youth-day py-5 grid sm:grid-cols-[11rem_1fr] gap-2 sm:gap-6" data-date={day.date} hidden={day.date < today || day.date > windowEnd}>
+            <h3 class="font-display uppercase tracking-wide text-lg">
+              <span class="today-badge hidden text-xs bg-qvgold text-qvblack px-2 py-0.5 rounded mr-2 align-middle" data-today-for={day.date}>Today</span>
+              {day.label}
+            </h3>
+            <div>
+              {day.items.length > 0 && (
+                <ul class="space-y-3">
+                  {day.items.map(item => (
+                    <li class="youth-item flex gap-4" data-teams={item.teams.join('|')}>
+                      <span class="w-20 shrink-0 font-medium tabular-nums">{item.time}</span>
+                      <div>
+                        <p class="font-medium">
+                          <span class={`inline-block text-[0.65rem] uppercase font-display tracking-wider px-1.5 py-0.5 rounded mr-2 align-middle ${item.kind === 'game' ? 'bg-qvblack text-qvgold' : 'bg-gray-100 text-gray-600'}`}>
+                            {item.league} {item.kind === 'game' ? 'game' : 'practice'}
+                          </span>
+                          {item.title}
+                        </p>
+                        <p class="text-sm text-gray-600">
+                          {item.location}{item.endTime && ` · until ${item.endTime}`}
+                        </p>
+                        {item.score && <p class="text-sm font-semibold text-qvgold-700 mt-1">{item.score}</p>}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <p class:list={['day-empty text-gray-500 text-sm', { hidden: day.items.length > 0 }]}>
+                {day.note ? `No practices (${day.note}).` : 'Nothing scheduled.'}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-gray-50">
+    <div class="container-narrow">
+      <h2 class="font-display text-2xl uppercase mb-6 border-l-4 border-qvgold pl-3">Standings</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        {data.leagues.map(league => {
+          const played = league.standings.some(r => r.w + r.l + r.t > 0);
+          const first = firstGameLabel(league);
+          return (
+            <div>
+              <h3 class="font-display text-xl uppercase mb-3">{league.name}</h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                  <thead class="text-xs uppercase tracking-wider text-gray-500 font-display">
+                    <tr>
+                      <th scope="col" class="py-2">Team</th>
+                      <th scope="col" class="py-2 text-right">W</th>
+                      <th scope="col" class="py-2 text-right">L</th>
+                      <th scope="col" class="py-2 text-right">Pct</th>
+                      <th scope="col" class="py-2 text-right">GB</th>
+                      <th scope="col" class="py-2 text-right">Streak</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {league.standings.map(r => (
+                      <tr class="border-t border-gray-200">
+                        <td class="py-2 font-medium">{r.team}</td>
+                        <td class="py-2 text-right tabular-nums">{r.w}</td>
+                        <td class="py-2 text-right tabular-nums">{r.l}{r.t ? `-${r.t}` : ''}</td>
+                        <td class="py-2 text-right tabular-nums">{formatPct(r.pct)}</td>
+                        <td class="py-2 text-right tabular-nums">{r.gb || '–'}</td>
+                        <td class="py-2 text-right">{r.streak || '–'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {!played && first && <p class="text-sm text-gray-500 mt-3">Standings start after the first games on {first}.</p>}
+              <p class="text-sm mt-3">
+                <a class="text-qvgold-700 hover:underline" href={`https://web.gc.com/organizations/${league.orgId}`} target="_blank" rel="noopener">Full {league.name} schedule on GameChanger</a>
+              </p>
+            </div>
+          );
+        })}
+      </div>
+      <p class="text-xs text-gray-500 mt-10">Games and standings come from GameChanger and were last updated {updated} ET. Practice times are set by the league.</p>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .youth-day[hidden],
+  .youth-item[hidden] {
+    display: none !important;
+  }
+</style>
+
+<script>
+  // Show the 7 days starting today (Eastern time), and apply the team filter.
+  const tz = 'America/New_York';
+  const fmt = new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' });
+  const today = fmt.format(new Date());
+  const plus = (date: string, n: number) => {
+    const [y, m, d] = date.split('-').map(Number);
+    return new Date(Date.UTC(y, m - 1, d + n)).toISOString().slice(0, 10);
+  };
+  const end = plus(today, 6);
+
+  const days = Array.from(document.querySelectorAll<HTMLElement>('.youth-day'));
+  let shown = 0;
+  for (const day of days) {
+    const date = day.dataset.date ?? '';
+    const inWindow = date >= today && date <= end;
+    day.hidden = !inWindow;
+    if (inWindow) shown++;
+  }
+  document.querySelector(`[data-today-for="${today}"]`)?.classList.remove('hidden');
+  if (shown === 0) document.getElementById('season-over')?.classList.remove('hidden');
+
+  const select = document.getElementById('team-filter') as HTMLSelectElement | null;
+  const applyFilter = (team: string) => {
+    for (const day of days) {
+      const items = Array.from(day.querySelectorAll<HTMLElement>('.youth-item'));
+      let visible = 0;
+      for (const item of items) {
+        const match = !team || (item.dataset.teams ?? '').split('|').includes(team);
+        item.hidden = !match;
+        if (match) visible++;
+      }
+      const empty = day.querySelector('.day-empty');
+      if (items.length > 0) empty?.classList.toggle('hidden', visible > 0);
+    }
+  };
+  let saved = '';
+  try {
+    saved = localStorage.getItem('youth-team') ?? '';
+  } catch {}
+  if (select) {
+    if (saved && Array.from(select.options).some(o => o.value === saved)) select.value = saved;
+    applyFilter(select.value);
+    select.addEventListener('change', () => {
+      applyFilter(select.value);
+      try {
+        localStorage.setItem('youth-team', select.value);
+      } catch {}
+    });
+  }
+</script>

@@ -1,0 +1,18 @@
+{
+  "_howToEdit": "One entry per weekly practice slot. 'from' is the first date the slot applies (YYYY-MM-DD); add 'until' when a slot ends, then add a new entry for the new slot. Set 'confirmed' to false to keep a slot off the website. 'skipDates' are days with no practice (QV schools closed). Times are Eastern, 24-hour.",
+  "seasonEnd": "2027-01-21",
+  "skipDates": [
+    { "from": "2026-11-25", "to": "2026-11-27", "reason": "Thanksgiving recess" },
+    { "from": "2026-12-23", "to": "2027-01-03", "reason": "Winter recess" }
+  ],
+  "slots": [
+    { "team": "Wings", "league": "JV", "day": "Monday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
+    { "team": "Fire", "league": "JV", "day": "Monday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
+    { "team": "Aces", "league": "JV", "day": "Tuesday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
+    { "team": "Sparks", "league": "JV", "day": "Tuesday", "start": "18:15", "end": "19:30", "location": "Osborne Elementary", "from": "2026-11-09", "confirmed": true },
+    { "team": "Storm", "league": "Varsity", "day": "Wednesday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
+    { "team": "Sky", "league": "Varsity", "day": "Wednesday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
+    { "team": "Valkyries", "league": "Varsity", "day": "Thursday", "start": "18:15", "end": "19:30", "location": "QV Middle School", "from": "2026-11-09", "confirmed": true },
+    { "team": "Lynx", "league": "Varsity", "day": "Thursday", "start": "19:30", "end": "20:45", "location": "Edgeworth Elementary", "from": "2026-11-09", "confirmed": false }
+  ]
+}

@@ -103,6 +103,15 @@ Edit `src/data/schedule.json`. Each entry:
 ```
 Add `result` to past games. Future games (no result) auto-appear in Upcoming.
 
+### Youth league page (/youth)
+The youth page shows the next 7 days of games and practices plus JV and Varsity standings.
+
+- **Games and standings** update themselves. `.github/workflows/youth-data.yml` runs `scripts/fetch-gamechanger.mjs` every night at 5 AM ET and every half hour from 6 to 10 PM ET on Monday and Wednesday game nights. It reads GameChanger's public league pages (no login) and commits `src/data/youth/gamechanger.json` only when something changed, which makes Vercel redeploy.
+- If GameChanger can't be reached or the data looks wrong (missing teams or games), the script changes nothing, the Action run fails, and GitHub emails the repo owner. The site keeps the last good data.
+- To update right away: GitHub, Actions tab, "Update youth schedule", Run workflow.
+- **Practices** are edited by hand in `src/data/youth/practices.json`: one entry per weekly slot. When a slot changes, add `until` to the old entry and a new entry with a `from` date. Set `confirmed` to `false` to keep a slot off the site. `skipDates` lists days QV schools are closed.
+- GameChanger league pages: JV `s0rXscDEqehF`, Varsity `O95uji7lrSjE` (set in the script).
+
 ### Add gallery photos
 1. Drop images in `/public/images/gallery/`
 2. Edit the `photos` array in `src/pages/gallery.astro`

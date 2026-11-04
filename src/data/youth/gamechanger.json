@@ -1,0 +1,702 @@
+{
+  "source": "GameChanger public league pages",
+  "fetchedAt": "2026-11-04T02:01:07.776Z",
+  "leagues": [
+    {
+      "key": "jv",
+      "name": "JV",
+      "orgId": "s0rXscDEqehF",
+      "gameNight": "Wednesday",
+      "teams": [
+        "Aces",
+        "Sparks",
+        "Wings",
+        "Fire"
+      ],
+      "games": [
+        {
+          "id": "e91cc649",
+          "start": "2026-11-18T23:00:00.000Z",
+          "home": "Aces",
+          "away": "Sparks",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "3a4a56cf",
+          "start": "2026-11-18T23:00:00.000Z",
+          "home": "Fire",
+          "away": "Wings",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "9c6f6696",
+          "start": "2026-11-19T00:00:00.000Z",
+          "home": "Wings",
+          "away": "Aces",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "8335d7ae",
+          "start": "2026-11-19T00:00:00.000Z",
+          "home": "Sparks",
+          "away": "Fire",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "06c5103a",
+          "start": "2026-12-02T23:00:00.000Z",
+          "home": "Fire",
+          "away": "Aces",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "4f6368e0",
+          "start": "2026-12-02T23:00:00.000Z",
+          "home": "Sparks",
+          "away": "Wings",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "8acaedc8",
+          "start": "2026-12-03T00:00:00.000Z",
+          "home": "Wings",
+          "away": "Fire",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "aa19f2f2",
+          "start": "2026-12-03T00:00:00.000Z",
+          "home": "Aces",
+          "away": "Sparks",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "e5ba9bb6",
+          "start": "2026-12-09T23:00:00.000Z",
+          "home": "Aces",
+          "away": "Wings",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "8a92a229",
+          "start": "2026-12-09T23:00:00.000Z",
+          "home": "Sparks",
+          "away": "Fire",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "558dee44",
+          "start": "2026-12-10T00:00:00.000Z",
+          "home": "Wings",
+          "away": "Sparks",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "2b9dfefa",
+          "start": "2026-12-10T00:00:00.000Z",
+          "home": "Fire",
+          "away": "Aces",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "4e7b276a",
+          "start": "2026-12-16T23:00:00.000Z",
+          "home": "Sparks",
+          "away": "Aces",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "8e638962",
+          "start": "2026-12-16T23:00:00.000Z",
+          "home": "Wings",
+          "away": "Fire",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "e1f58838",
+          "start": "2026-12-17T00:00:00.000Z",
+          "home": "Fire",
+          "away": "Sparks",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "bd141ccd",
+          "start": "2026-12-17T00:00:00.000Z",
+          "home": "Aces",
+          "away": "Wings",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "be88399a",
+          "start": "2027-01-06T23:00:00.000Z",
+          "home": "Aces",
+          "away": "Fire",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "e1e2b77f",
+          "start": "2027-01-06T23:00:00.000Z",
+          "home": "Wings",
+          "away": "Sparks",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "ae64ffb6",
+          "start": "2027-01-07T00:00:00.000Z",
+          "home": "Fire",
+          "away": "Wings",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "db7607fe",
+          "start": "2027-01-07T00:00:00.000Z",
+          "home": "Sparks",
+          "away": "Aces",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "cd3fb46a",
+          "start": "2027-01-13T23:00:00.000Z",
+          "home": "Wings",
+          "away": "Aces",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "d00a9ae2",
+          "start": "2027-01-13T23:00:00.000Z",
+          "home": "Fire",
+          "away": "Sparks",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "16651771",
+          "start": "2027-01-14T00:00:00.000Z",
+          "home": "Sparks",
+          "away": "Wings",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "7ae56c56",
+          "start": "2027-01-14T00:00:00.000Z",
+          "home": "Aces",
+          "away": "Fire",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "30358c00",
+          "start": "2027-01-20T23:00:00.000Z",
+          "home": "Aces",
+          "away": "Sparks",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "7491c46b",
+          "start": "2027-01-20T23:00:00.000Z",
+          "home": "Fire",
+          "away": "Wings",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "2605ecd6",
+          "start": "2027-01-21T00:00:00.000Z",
+          "home": "Sparks",
+          "away": "Fire",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "5277d80c",
+          "start": "2027-01-21T00:00:00.000Z",
+          "home": "Wings",
+          "away": "Aces",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        }
+      ],
+      "standings": [
+        {
+          "team": "Aces",
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "pct": 0,
+          "home": "0-0",
+          "away": "0-0",
+          "pf": 0,
+          "pa": 0,
+          "streak": "",
+          "gb": ""
+        },
+        {
+          "team": "Fire",
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "pct": 0,
+          "home": "0-0",
+          "away": "0-0",
+          "pf": 0,
+          "pa": 0,
+          "streak": "",
+          "gb": ""
+        },
+        {
+          "team": "Sparks",
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "pct": 0,
+          "home": "0-0",
+          "away": "0-0",
+          "pf": 0,
+          "pa": 0,
+          "streak": "",
+          "gb": ""
+        },
+        {
+          "team": "Wings",
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "pct": 0,
+          "home": "0-0",
+          "away": "0-0",
+          "pf": 0,
+          "pa": 0,
+          "streak": "",
+          "gb": ""
+        }
+      ]
+    },
+    {
+      "key": "varsity",
+      "name": "Varsity",
+      "orgId": "O95uji7lrSjE",
+      "gameNight": "Monday",
+      "teams": [
+        "Lynx",
+        "Sky",
+        "Valkyries",
+        "Storm"
+      ],
+      "games": [
+        {
+          "id": "671a0870",
+          "start": "2026-11-16T23:00:00.000Z",
+          "home": "Lynx",
+          "away": "Valkyries",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "05e3a242",
+          "start": "2026-11-16T23:00:00.000Z",
+          "home": "Storm",
+          "away": "Sky",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "72dfa344",
+          "start": "2026-11-17T00:00:00.000Z",
+          "home": "Valkyries",
+          "away": "Storm",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "8e7fd160",
+          "start": "2026-11-17T00:00:00.000Z",
+          "home": "Sky",
+          "away": "Lynx",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "16d6efd1",
+          "start": "2026-11-30T23:00:00.000Z",
+          "home": "Lynx",
+          "away": "Sky",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "5a89bf01",
+          "start": "2026-11-30T23:00:00.000Z",
+          "home": "Valkyries",
+          "away": "Storm",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "eca7c468",
+          "start": "2026-12-01T00:00:00.000Z",
+          "home": "Sky",
+          "away": "Valkyries",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "65b816b4",
+          "start": "2026-12-01T00:00:00.000Z",
+          "home": "Storm",
+          "away": "Lynx",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "22817c28",
+          "start": "2026-12-07T23:00:00.000Z",
+          "home": "Lynx",
+          "away": "Storm",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "ea01745c",
+          "start": "2026-12-07T23:00:00.000Z",
+          "home": "Sky",
+          "away": "Valkyries",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "25cb3131",
+          "start": "2026-12-08T00:00:00.000Z",
+          "home": "Valkyries",
+          "away": "Lynx",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "904520e0",
+          "start": "2026-12-08T00:00:00.000Z",
+          "home": "Storm",
+          "away": "Sky",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "c4cb499e",
+          "start": "2026-12-14T23:00:00.000Z",
+          "home": "Sky",
+          "away": "Storm",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "cd963794",
+          "start": "2026-12-14T23:00:00.000Z",
+          "home": "Valkyries",
+          "away": "Lynx",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "e8a565f9",
+          "start": "2026-12-15T00:00:00.000Z",
+          "home": "Lynx",
+          "away": "Sky",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "5da02767",
+          "start": "2026-12-15T00:00:00.000Z",
+          "home": "Storm",
+          "away": "Valkyries",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "671d9e3d",
+          "start": "2027-01-04T23:00:00.000Z",
+          "home": "Storm",
+          "away": "Valkyries",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "3ff4a00d",
+          "start": "2027-01-04T23:00:00.000Z",
+          "home": "Sky",
+          "away": "Lynx",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "dc7a5c4b",
+          "start": "2027-01-05T00:00:00.000Z",
+          "home": "Lynx",
+          "away": "Storm",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "9df115f6",
+          "start": "2027-01-05T00:00:00.000Z",
+          "home": "Valkyries",
+          "away": "Sky",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "355293af",
+          "start": "2027-01-11T23:00:00.000Z",
+          "home": "Valkyries",
+          "away": "Sky",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "955387de",
+          "start": "2027-01-11T23:00:00.000Z",
+          "home": "Storm",
+          "away": "Lynx",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "2d9c9d90",
+          "start": "2027-01-12T00:00:00.000Z",
+          "home": "Sky",
+          "away": "Storm",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "1aab6352",
+          "start": "2027-01-12T00:00:00.000Z",
+          "home": "Lynx",
+          "away": "Valkyries",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "3db67e8f",
+          "start": "2027-01-18T23:00:00.000Z",
+          "home": "Valkyries",
+          "away": "Lynx",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "c4c499c6",
+          "start": "2027-01-18T23:00:00.000Z",
+          "home": "Sky",
+          "away": "Storm",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "1aa7d558",
+          "start": "2027-01-19T00:00:00.000Z",
+          "home": "Storm",
+          "away": "Valkyries",
+          "location": "RIZE Sports - Court 33",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        },
+        {
+          "id": "41375416",
+          "start": "2027-01-19T00:00:00.000Z",
+          "home": "Lynx",
+          "away": "Sky",
+          "location": "RIZE Sports - Court 6",
+          "homeScore": null,
+          "awayScore": null,
+          "final": false
+        }
+      ],
+      "standings": [
+        {
+          "team": "Lynx",
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "pct": 0,
+          "home": "0-0",
+          "away": "0-0",
+          "pf": 0,
+          "pa": 0,
+          "streak": "",
+          "gb": ""
+        },
+        {
+          "team": "Sky",
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "pct": 0,
+          "home": "0-0",
+          "away": "0-0",
+          "pf": 0,
+          "pa": 0,
+          "streak": "",
+          "gb": ""
+        },
+        {
+          "team": "Storm",
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "pct": 0,
+          "home": "0-0",
+          "away": "0-0",
+          "pf": 0,
+          "pa": 0,
+          "streak": "",
+          "gb": ""
+        },
+        {
+          "team": "Valkyries",
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "pct": 0,
+          "home": "0-0",
+          "away": "0-0",
+          "pf": 0,
+          "pa": 0,
+          "streak": "",
+          "gb": ""
+        }
+      ]
+    }
+  ]
+}
