@@ -1,6 +1,6 @@
 {
   "source": "GameChanger public league pages",
-  "fetchedAt": "2026-11-04T02:01:07.776Z",
+  "fetchedAt": "2026-11-04T12:01:47.421Z",
   "leagues": [
     {
       "key": "jv",
@@ -15,7 +15,7 @@
       ],
       "games": [
         {
-          "id": "e91cc649",
+          "id": "e91cc649-8510-42bf-b59a-9944b3473804",
           "start": "2026-11-18T23:00:00.000Z",
           "home": "Aces",
           "away": "Sparks",
@@ -25,7 +25,7 @@
           "final": false
         },
         {
-          "id": "3a4a56cf",
+          "id": "3a4a56cf-be78-4e69-ad51-297844106ce9",
           "start": "2026-11-18T23:00:00.000Z",
           "home": "Fire",
           "away": "Wings",
@@ -35,7 +35,7 @@
           "final": false
         },
         {
-          "id": "9c6f6696",
+          "id": "9c6f6696-6440-4bfb-be78-f3338b7fb987",
           "start": "2026-11-19T00:00:00.000Z",
           "home": "Wings",
           "away": "Aces",
@@ -45,7 +45,7 @@
           "final": false
         },
         {
-          "id": "8335d7ae",
+          "id": "8335d7ae-df46-47e6-aeb1-fc118a6313f5",
           "start": "2026-11-19T00:00:00.000Z",
           "home": "Sparks",
           "away": "Fire",
@@ -55,7 +55,7 @@
           "final": false
         },
         {
-          "id": "06c5103a",
+          "id": "06c5103a-a7c8-4dba-97f8-1df532354ebd",
           "start": "2026-12-02T23:00:00.000Z",
           "home": "Fire",
           "away": "Aces",
@@ -65,7 +65,7 @@
           "final": false
         },
         {
-          "id": "4f6368e0",
+          "id": "4f6368e0-7234-422c-b141-4eceda6b0dd3",
           "start": "2026-12-02T23:00:00.000Z",
           "home": "Sparks",
           "away": "Wings",
@@ -75,7 +75,7 @@
           "final": false
         },
         {
-          "id": "8acaedc8",
+          "id": "8acaedc8-3cb4-425a-a7ad-7e3e4579aac5",
           "start": "2026-12-03T00:00:00.000Z",
           "home": "Wings",
           "away": "Fire",
@@ -85,7 +85,7 @@
           "final": false
         },
         {
-          "id": "aa19f2f2",
+          "id": "aa19f2f2-384e-4669-ab24-9d6c8610b32c",
           "start": "2026-12-03T00:00:00.000Z",
           "home": "Aces",
           "away": "Sparks",
@@ -95,7 +95,7 @@
           "final": false
         },
         {
-          "id": "e5ba9bb6",
+          "id": "e5ba9bb6-97bc-4e6b-9a2c-521ef74ab1a6",
           "start": "2026-12-09T23:00:00.000Z",
           "home": "Aces",
           "away": "Wings",
@@ -105,7 +105,7 @@
           "final": false
         },
         {
-          "id": "8a92a229",
+          "id": "8a92a229-c067-4ee0-9009-561597c4ebc9",
           "start": "2026-12-09T23:00:00.000Z",
           "home": "Sparks",
           "away": "Fire",
@@ -115,7 +115,7 @@
           "final": false
         },
         {
-          "id": "558dee44",
+          "id": "558dee44-da8e-46d7-9317-d03c9c17be16",
           "start": "2026-12-10T00:00:00.000Z",
           "home": "Wings",
           "away": "Sparks",
@@ -125,7 +125,7 @@
           "final": false
         },
         {
-          "id": "2b9dfefa",
+          "id": "2b9dfefa-65d1-4cf9-a35d-a6b60d028b87",
           "start": "2026-12-10T00:00:00.000Z",
           "home": "Fire",
           "away": "Aces",
@@ -135,7 +135,7 @@
           "final": false
         },
         {
-          "id": "4e7b276a",
+          "id": "4e7b276a-aa5b-43c1-8431-aee82611dd2a",
           "start": "2026-12-16T23:00:00.000Z",
           "home": "Sparks",
           "away": "Aces",
@@ -145,7 +145,7 @@
           "final": false
         },
         {
-          "id": "8e638962",
+          "id": "8e638962-6aef-4508-83e3-7ee0048f594d",
           "start": "2026-12-16T23:00:00.000Z",
           "home": "Wings",
           "away": "Fire",
@@ -155,7 +155,7 @@
           "final": false
         },
         {
-          "id": "e1f58838",
+          "id": "e1f58838-7256-4b74-a6f3-07f12f6bdedf",
           "start": "2026-12-17T00:00:00.000Z",
           "home": "Fire",
           "away": "Sparks",
@@ -165,7 +165,7 @@
           "final": false
         },
         {
-          "id": "bd141ccd",
+          "id": "bd141ccd-aa17-478d-902c-25bda7aefcbc",
           "start": "2026-12-17T00:00:00.000Z",
           "home": "Aces",
           "away": "Wings",
@@ -175,7 +175,7 @@
           "final": false
         },
         {
-          "id": "be88399a",
+          "id": "be88399a-2d5b-4134-b622-2ee70e91df33",
           "start": "2027-01-06T23:00:00.000Z",
           "home": "Aces",
           "away": "Fire",
@@ -185,7 +185,7 @@
           "final": false
         },
         {
-          "id": "e1e2b77f",
+          "id": "e1e2b77f-2eae-49ab-8b31-9622db3b6066",
           "start": "2027-01-06T23:00:00.000Z",
           "home": "Wings",
           "away": "Sparks",
@@ -195,7 +195,7 @@
           "final": false
         },
         {
-          "id": "ae64ffb6",
+          "id": "ae64ffb6-987a-4876-962a-971257ff6f50",
           "start": "2027-01-07T00:00:00.000Z",
           "home": "Fire",
           "away": "Wings",
@@ -205,7 +205,7 @@
           "final": false
         },
         {
-          "id": "db7607fe",
+          "id": "db7607fe-f6aa-4283-a239-cbb1f48a9dfe",
           "start": "2027-01-07T00:00:00.000Z",
           "home": "Sparks",
           "away": "Aces",
@@ -215,7 +215,7 @@
           "final": false
         },
         {
-          "id": "cd3fb46a",
+          "id": "cd3fb46a-3f54-4395-86a8-4decfa230754",
           "start": "2027-01-13T23:00:00.000Z",
           "home": "Wings",
           "away": "Aces",
@@ -225,7 +225,7 @@
           "final": false
         },
         {
-          "id": "d00a9ae2",
+          "id": "d00a9ae2-8a03-47da-b39a-5539e9f9ff0d",
           "start": "2027-01-13T23:00:00.000Z",
           "home": "Fire",
           "away": "Sparks",
@@ -235,7 +235,7 @@
           "final": false
         },
         {
-          "id": "16651771",
+          "id": "16651771-17ef-4678-8da6-79860069ec4c",
           "start": "2027-01-14T00:00:00.000Z",
           "home": "Sparks",
           "away": "Wings",
@@ -245,7 +245,7 @@
           "final": false
         },
         {
-          "id": "7ae56c56",
+          "id": "7ae56c56-7420-46b7-9784-226959a421b2",
           "start": "2027-01-14T00:00:00.000Z",
           "home": "Aces",
           "away": "Fire",
@@ -255,7 +255,7 @@
           "final": false
         },
         {
-          "id": "30358c00",
+          "id": "30358c00-fa8e-41f4-a328-a8ad012bc384",
           "start": "2027-01-20T23:00:00.000Z",
           "home": "Aces",
           "away": "Sparks",
@@ -265,7 +265,7 @@
           "final": false
         },
         {
-          "id": "7491c46b",
+          "id": "7491c46b-0975-4745-a33b-e798aa1f808e",
           "start": "2027-01-20T23:00:00.000Z",
           "home": "Fire",
           "away": "Wings",
@@ -275,7 +275,7 @@
           "final": false
         },
         {
-          "id": "2605ecd6",
+          "id": "2605ecd6-3073-4044-94f5-89f4cb335cef",
           "start": "2027-01-21T00:00:00.000Z",
           "home": "Sparks",
           "away": "Fire",
@@ -285,7 +285,7 @@
           "final": false
         },
         {
-          "id": "5277d80c",
+          "id": "5277d80c-5783-4b5e-9341-7f12dba284ed",
           "start": "2027-01-21T00:00:00.000Z",
           "home": "Wings",
           "away": "Aces",
@@ -363,7 +363,7 @@
       ],
       "games": [
         {
-          "id": "671a0870",
+          "id": "671a0870-618e-46f1-b2ec-694e6c61d87a",
           "start": "2026-11-16T23:00:00.000Z",
           "home": "Lynx",
           "away": "Valkyries",
@@ -373,7 +373,7 @@
           "final": false
         },
         {
-          "id": "05e3a242",
+          "id": "05e3a242-99b4-4be1-8aa3-71f11f2b605c",
           "start": "2026-11-16T23:00:00.000Z",
           "home": "Storm",
           "away": "Sky",
@@ -383,7 +383,7 @@
           "final": false
         },
         {
-          "id": "72dfa344",
+          "id": "72dfa344-a827-40f2-89e0-02dad6a5f81b",
           "start": "2026-11-17T00:00:00.000Z",
           "home": "Valkyries",
           "away": "Storm",
@@ -393,7 +393,7 @@
           "final": false
         },
         {
-          "id": "8e7fd160",
+          "id": "8e7fd160-eb55-4b46-9de6-46e96dcb23e1",
           "start": "2026-11-17T00:00:00.000Z",
           "home": "Sky",
           "away": "Lynx",
@@ -403,7 +403,7 @@
           "final": false
         },
         {
-          "id": "16d6efd1",
+          "id": "16d6efd1-2eb2-4016-8706-5f6144c8d0b6",
           "start": "2026-11-30T23:00:00.000Z",
           "home": "Lynx",
           "away": "Sky",
@@ -413,7 +413,7 @@
           "final": false
         },
         {
-          "id": "5a89bf01",
+          "id": "5a89bf01-ed00-448c-804b-67b86b852567",
           "start": "2026-11-30T23:00:00.000Z",
           "home": "Valkyries",
           "away": "Storm",
@@ -423,7 +423,7 @@
           "final": false
         },
         {
-          "id": "eca7c468",
+          "id": "eca7c468-b76f-45fd-a21d-b33c894cfce6",
           "start": "2026-12-01T00:00:00.000Z",
           "home": "Sky",
           "away": "Valkyries",
@@ -433,7 +433,7 @@
           "final": false
         },
         {
-          "id": "65b816b4",
+          "id": "65b816b4-009a-4767-9f45-ef372894f1e5",
           "start": "2026-12-01T00:00:00.000Z",
           "home": "Storm",
           "away": "Lynx",
@@ -443,7 +443,7 @@
           "final": false
         },
         {
-          "id": "22817c28",
+          "id": "22817c28-c839-470b-a068-25dfcf678546",
           "start": "2026-12-07T23:00:00.000Z",
           "home": "Lynx",
           "away": "Storm",
@@ -453,7 +453,7 @@
           "final": false
         },
         {
-          "id": "ea01745c",
+          "id": "ea01745c-c7f3-4dfc-87d0-19f505282f4d",
           "start": "2026-12-07T23:00:00.000Z",
           "home": "Sky",
           "away": "Valkyries",
@@ -463,7 +463,7 @@
           "final": false
         },
         {
-          "id": "25cb3131",
+          "id": "25cb3131-5d83-4818-bec5-ae8debc89d93",
           "start": "2026-12-08T00:00:00.000Z",
           "home": "Valkyries",
           "away": "Lynx",
@@ -473,7 +473,7 @@
           "final": false
         },
         {
-          "id": "904520e0",
+          "id": "904520e0-b7b9-4380-972f-9edba820996e",
           "start": "2026-12-08T00:00:00.000Z",
           "home": "Storm",
           "away": "Sky",
@@ -483,7 +483,7 @@
           "final": false
         },
         {
-          "id": "c4cb499e",
+          "id": "c4cb499e-936d-428e-a2d8-871bad88ad59",
           "start": "2026-12-14T23:00:00.000Z",
           "home": "Sky",
           "away": "Storm",
@@ -493,7 +493,7 @@
           "final": false
         },
         {
-          "id": "cd963794",
+          "id": "cd963794-9381-42e5-a5b4-da4c48cea5a1",
           "start": "2026-12-14T23:00:00.000Z",
           "home": "Valkyries",
           "away": "Lynx",
@@ -503,7 +503,7 @@
           "final": false
         },
         {
-          "id": "e8a565f9",
+          "id": "e8a565f9-a577-417f-b624-34de92c0228c",
           "start": "2026-12-15T00:00:00.000Z",
           "home": "Lynx",
           "away": "Sky",
@@ -513,7 +513,7 @@
           "final": false
         },
         {
-          "id": "5da02767",
+          "id": "5da02767-6df6-449c-974a-2bae1d2e0eb9",
           "start": "2026-12-15T00:00:00.000Z",
           "home": "Storm",
           "away": "Valkyries",
@@ -523,7 +523,7 @@
           "final": false
         },
         {
-          "id": "671d9e3d",
+          "id": "671d9e3d-cc9f-4919-850c-6266588b05cc",
           "start": "2027-01-04T23:00:00.000Z",
           "home": "Storm",
           "away": "Valkyries",
@@ -533,7 +533,7 @@
           "final": false
         },
         {
-          "id": "3ff4a00d",
+          "id": "3ff4a00d-d492-4997-9797-61d61fb59963",
           "start": "2027-01-04T23:00:00.000Z",
           "home": "Sky",
           "away": "Lynx",
@@ -543,7 +543,7 @@
           "final": false
         },
         {
-          "id": "dc7a5c4b",
+          "id": "dc7a5c4b-2222-45a9-b4fd-c082c2ccd0e1",
           "start": "2027-01-05T00:00:00.000Z",
           "home": "Lynx",
           "away": "Storm",
@@ -553,7 +553,7 @@
           "final": false
         },
         {
-          "id": "9df115f6",
+          "id": "9df115f6-be20-4f81-9b9a-bb07714d76ac",
           "start": "2027-01-05T00:00:00.000Z",
           "home": "Valkyries",
           "away": "Sky",
@@ -563,7 +563,7 @@
           "final": false
         },
         {
-          "id": "355293af",
+          "id": "355293af-26bc-4522-8462-a9fb1f5ba19f",
           "start": "2027-01-11T23:00:00.000Z",
           "home": "Valkyries",
           "away": "Sky",
@@ -573,7 +573,7 @@
           "final": false
         },
         {
-          "id": "955387de",
+          "id": "955387de-dd67-4bea-8132-7b856286fda1",
           "start": "2027-01-11T23:00:00.000Z",
           "home": "Storm",
           "away": "Lynx",
@@ -583,7 +583,7 @@
           "final": false
         },
         {
-          "id": "2d9c9d90",
+          "id": "2d9c9d90-37a3-45e1-819b-55b0cc7c3cbf",
           "start": "2027-01-12T00:00:00.000Z",
           "home": "Sky",
           "away": "Storm",
@@ -593,7 +593,7 @@
           "final": false
         },
         {
-          "id": "1aab6352",
+          "id": "1aab6352-0125-4bf0-80d6-872a99e24c23",
           "start": "2027-01-12T00:00:00.000Z",
           "home": "Lynx",
           "away": "Valkyries",
@@ -603,7 +603,7 @@
           "final": false
         },
         {
-          "id": "3db67e8f",
+          "id": "3db67e8f-5f65-4e6c-87e5-3968ea79f0e9",
           "start": "2027-01-18T23:00:00.000Z",
           "home": "Valkyries",
           "away": "Lynx",
@@ -613,7 +613,7 @@
           "final": false
         },
         {
-          "id": "c4c499c6",
+          "id": "c4c499c6-bced-4ad4-a925-c51907d56f04",
           "start": "2027-01-18T23:00:00.000Z",
           "home": "Sky",
           "away": "Storm",
@@ -623,7 +623,7 @@
           "final": false
         },
         {
-          "id": "1aa7d558",
+          "id": "1aa7d558-0a27-43a6-81ba-a400fdbf059d",
           "start": "2027-01-19T00:00:00.000Z",
           "home": "Storm",
           "away": "Valkyries",
@@ -633,7 +633,7 @@
           "final": false
         },
         {
-          "id": "41375416",
+          "id": "41375416-a303-43da-97a1-87df813ed264",
           "start": "2027-01-19T00:00:00.000Z",
           "home": "Lynx",
           "away": "Sky",
