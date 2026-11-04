@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FeaturedSponsors from '../components/FeaturedSponsors.astro';
 import gc from '../data/youth/gamechanger.json';
 import practicesJson from '../data/youth/practices.json';
 import {
@@ -153,6 +154,8 @@ const updated = new Intl.DateTimeFormat('en-US', {
       <p class="text-xs text-gray-500 mt-10">Games and standings come from GameChanger and were last updated {updated} ET. Practice times are set by the league.</p>
     </div>
   </section>
+
+  <FeaturedSponsors />
 </Layout>
 
 <style is:global>
