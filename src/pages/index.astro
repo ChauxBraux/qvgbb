@@ -2,15 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { raffle, isRaffleLive } from '../lib/raffle';
-import { CURRENT_SPONSOR_YEAR } from '../lib/sponsors';
+import FeaturedSponsors from '../components/FeaturedSponsors.astro';
 const raffleLive = isRaffleLive();
-
-const sponsors = await getCollection('sponsors', ({ data }) => data.year === CURRENT_SPONSOR_YEAR);
-const tierOrder = { elite_team: 0, champion: 1, game_changer: 2, all_star: 3, super_fan: 4 };
-const tierLabels: Record<string, string> = { elite_team: 'Elite Team', champion: 'Champion', game_changer: 'Game Changer', all_star: 'All Star', super_fan: 'Super Fan' };
-const topSponsors = sponsors
-  .sort((a, b) => tierOrder[a.data.tier] - tierOrder[b.data.tier])
-  .slice(0, 6);
 
 const news = (await getCollection('news', ({ data }) => !data.draft))
   .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
@@ -53,26 +46,7 @@ const news = (await getCollection('news', ({ data }) => !data.draft))
   )}
 
   <!-- Featured sponsors -->
-  <section class="py-16">
-    <div class="container-narrow">
-      <div class="flex items-end justify-between mb-8">
-        <div>
-          <h2 class="font-display text-3xl md:text-4xl uppercase">Featured Sponsors</h2>
-          <p class="text-gray-600 mt-2">Local businesses who make this season possible.</p>
-        </div>
-        <a href="/sponsors" class="text-qvblack hover:text-qvgold-700 font-display uppercase text-sm tracking-wider hidden md:inline">View all &rarr;</a>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {topSponsors.map(s => (
-          <div class="border-2 border-qvblack p-6 hover:border-qvgold transition-colors">
-            <p class="font-display font-semibold text-lg">{s.data.name}</p>
-            {s.data.contact && <p class="text-sm text-gray-600 mt-1">{s.data.contact}</p>}
-            <p class="text-xs uppercase tracking-wider text-qvgold-700 mt-3 font-display">{tierLabels[s.data.tier]} Sponsor</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <FeaturedSponsors />
 
   <!-- Recent news -->
   {news.length > 0 && (
