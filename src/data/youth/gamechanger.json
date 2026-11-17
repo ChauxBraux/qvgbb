@@ -1,6 +1,6 @@
 {
   "source": "GameChanger public league pages",
-  "fetchedAt": "2026-11-04T12:01:47.421Z",
+  "fetchedAt": "2026-11-17T11:23:03.696Z",
   "leagues": [
     {
       "key": "jv",
@@ -645,6 +645,32 @@
       ],
       "standings": [
         {
+          "team": "Sky",
+          "w": 1,
+          "l": 0,
+          "t": 0,
+          "pct": 1,
+          "home": "0-0",
+          "away": "1-0",
+          "pf": 29,
+          "pa": 20,
+          "streak": "W1",
+          "gb": ""
+        },
+        {
+          "team": "Storm",
+          "w": 1,
+          "l": 1,
+          "t": 0,
+          "pct": 0.5,
+          "home": "0-1",
+          "away": "1-0",
+          "pf": 38,
+          "pa": 44,
+          "streak": "W1",
+          "gb": "0.5"
+        },
+        {
           "team": "Lynx",
           "w": 0,
           "l": 0,
@@ -655,46 +681,20 @@
           "pf": 0,
           "pa": 0,
           "streak": "",
-          "gb": ""
-        },
-        {
-          "team": "Sky",
-          "w": 0,
-          "l": 0,
-          "t": 0,
-          "pct": 0,
-          "home": "0-0",
-          "away": "0-0",
-          "pf": 0,
-          "pa": 0,
-          "streak": "",
-          "gb": ""
-        },
-        {
-          "team": "Storm",
-          "w": 0,
-          "l": 0,
-          "t": 0,
-          "pct": 0,
-          "home": "0-0",
-          "away": "0-0",
-          "pf": 0,
-          "pa": 0,
-          "streak": "",
-          "gb": ""
+          "gb": "0.5"
         },
         {
           "team": "Valkyries",
           "w": 0,
-          "l": 0,
+          "l": 1,
           "t": 0,
           "pct": 0,
-          "home": "0-0",
+          "home": "0-1",
           "away": "0-0",
-          "pf": 0,
-          "pa": 0,
-          "streak": "",
-          "gb": ""
+          "pf": 15,
+          "pa": 18,
+          "streak": "L1",
+          "gb": "1"
         }
       ]
     }
